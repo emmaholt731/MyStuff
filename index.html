@@ -3,8 +3,8 @@
 <title>Two projects, one team</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0A0F1F;--p:#121A33;--p2:#18223F;--ink:#EEF2FF;--mute:#A6B0D0;--blue:#4F8CFF;--blue2:#7FB0FF;--amber:#FF9F43;--teal:#2EE6B8;--gold:#FFD166;--pink:#FF6B9A;--violet:#B69CFF}
-body{background:radial-gradient(900px 600px at 100% 0%,rgba(79,140,255,.18),transparent 60%),radial-gradient(800px 700px at 0% 100%,rgba(255,209,102,.10),transparent 60%),var(--bg);background-attachment:fixed;color:var(--ink);font-family:Inter,Poppins,system-ui,sans-serif;min-height:100vh}
+:root{--bg:#F5F7FC;--p:#FFFFFF;--p2:#F8F9FE;--ink:#13203F;--mute:#4A5675;--blue:#3B6FE0;--blue2:#2F64D6;--amber:#D96C0A;--teal:#0C9A78;--gold:#B87A00;--pink:#D93B70;--violet:#6E4FD8}
+body{background:radial-gradient(900px 600px at 100% 0%,rgba(120,150,255,.16),transparent 60%),radial-gradient(800px 700px at 0% 100%,rgba(190,160,255,.14),transparent 60%),linear-gradient(180deg,#F8F9FF,#EEF1FB);background-attachment:fixed;color:var(--ink);font-family:Inter,Poppins,system-ui,sans-serif;min-height:100vh}
 a{color:var(--blue2);text-decoration:none;font-weight:600} a:hover{text-decoration:underline}
 .wrap{max-width:1120px;margin:0 auto;padding:40px 28px 60px}
 header .k{font:700 14px Poppins;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
@@ -96,6 +96,23 @@ background:linear-gradient(110deg,rgba(255,209,102,.18),rgba(79,140,255,.14));bo
 body.still .draw{animation:none!important;stroke-dashoffset:0}body.still .areaf{animation:none!important;opacity:1}body.still *{transition:none!important}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
 footer{margin-top:34px;color:#7F89AD;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* light theme */
+.tabs,.st,.face,.chart,.org{border:1px solid #E1E6F2;box-shadow:0 6px 22px -12px rgba(30,45,90,.25)}
+.face{border-top:4px solid var(--c)}
+.st.hold{border:1.5px dashed var(--gold)}
+.tab.on{background:var(--blue);color:#FFFFFF}
+.hero{background:linear-gradient(110deg,#FFF6DD,#E8F0FF);border:1px solid #F0D58A;box-shadow:0 10px 30px -16px rgba(184,122,0,.45)}
+.back .mean{background:#EEF2FB}
+.li{border-bottom:1px solid #E6EAF4}
+.brow .tr{background:#E9EDF6}
+.pill{border:1px solid rgba(217,108,10,.45);background:rgba(217,108,10,.07)}
+.pill.on{background:var(--amber);color:#FFFFFF}
+.you,.chip.lit{color:#06231B}
+.chip{background:#DDE3F1;color:var(--ink);opacity:.55}
+.chip.lit{opacity:1}
+.lead{background:rgba(12,154,120,.08);border:1px solid rgba(12,154,120,.35)}
+footer{color:#56617F}
 @media(max-width:860px){.grid,.rules{grid-template-columns:1fr}.hero{flex-direction:column;text-align:center}header h1{font-size:40px}}
 </style></head><body>
 <canvas id="confetti"></canvas>
@@ -117,7 +134,7 @@ footer{margin-top:34px;color:#7F89AD;font-size:13px;display:flex;justify-content
   <p class="cap">Grokipedia feeds the AI models people learn from. Better pages mean better answers.</p>
 
   <div class="hero" id="hero">
-    <div class="ring"><svg viewBox="0 0 180 180" width="180" height="180"><circle cx="90" cy="90" r="76" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="16"/><circle class="fg" id="ringfg" cx="90" cy="90" r="76" fill="none" stroke="#FFD166" stroke-width="16" stroke-linecap="round" stroke-dasharray="477.5" stroke-dashoffset="477.5" transform="rotate(-90 90 90)"/></svg>
+    <div class="ring"><svg viewBox="0 0 180 180" width="180" height="180"><circle cx="90" cy="90" r="76" fill="none" stroke="#E3E8F3" stroke-width="16"/><circle class="fg" id="ringfg" cx="90" cy="90" r="76" fill="none" stroke="#B87A00" stroke-width="16" stroke-linecap="round" stroke-dasharray="477.5" stroke-dashoffset="477.5" transform="rotate(-90 90 90)"/></svg>
       <div class="pct"><span><span class="cu" data-k="g_rate" data-to="87.5" data-dec="1">0</span>%</span><small>APPROVED</small></div></div>
     <div>
       <div class="big"><span class="cu" data-k="g_approved" data-to="328" style="color:var(--ink);font-size:72px;letter-spacing:-2px">0</span> <span>of <span data-k="g_sent">375</span></span></div>
@@ -311,7 +328,7 @@ footer{margin-top:34px;color:#7F89AD;font-size:13px;display:flex;justify-content
 <footer><span>Every number comes from project records and live page checks. Updated <span data-k="updated_label">Nov 3, 15:30</span> Israel time.</span><span>Built as a team, with you in charge.</span></footer>
 </div>
 
-<!--DATA-START--><script id="dash-data" type="application/json">{"g_sent":418,"g_approved":367,"g_in_review":1,"g_rate":87.8,"g_review_line":"1 newer edit waiting for review.","hist":[["Oct 5",26,9],["Oct 6",68,46],["Oct 7",69,52],["Oct 8",93,75],["Oct 9",98,79],["Oct 12",112,91],["Oct 13",112,91],["Oct 14",121,100],["Oct 16",125,104],["Oct 19",137,113],["Oct 20",148,122],["Oct 21",171,140],["Oct 22",192,158],["Oct 23",215,181],["Oct 26",216,182],["Oct 27",241,206],["Oct 28",241,206],["Oct 29",306,267],["Oct 30",319,279],["Nov 2",332,292],["Nov 3",375,328],["Nov 4",418,367]],"r0_lab":"Oct 5, first check","r0_txt":"9 of 26","r0_w":34.6,"r1_lab":"Oct 14","r1_txt":"100 of 121","r1_w":82.6,"r2_lab":"Nov 4, latest","r2_txt":"367 of 418","r2_w":87.8,"g_requests":35,"g_created":22,"g_pages_improved":242,"top":[["Muslim Brotherhood","https://grokipedia.com/page/Muslim_Brotherhood",14],["Hamas","https://grokipedia.com/page/Hamas",13],["Roy Altman","https://grokipedia.com/page/Roy_Altman",12],["Council on American–Islamic Relations","https://grokipedia.com/page/Council_on_American%E2%80%93Islamic_Relations",9],["Popular Front for the Liberation of Palestine","https://grokipedia.com/page/Popular_Front_for_the_Liberation_of_Palestine",8],["Al-Awda, The Palestine Right to Return Coalition","https://grokipedia.com/page/Al-Awda_The_Palestine_Right_to_Return_Coalition",7]],"g_sov_approved":4,"map_articles":1020,"map_matched":956,"map_missing":36,"pages":[["Tom Fletcher (diplomat)","Tom_Fletcher_(diplomat)",114],["Solicitors Disciplinary Tribunal","Solicitors_Disciplinary_Tribunal",105],["Mark Goldfeder","Mark_Goldfeder",104],["Karl Skorecki","Karl_Skorecki",97],["Israeli Sociological Society","Israeli_Sociological_Society",91],["Resist, Inc.","Resist_Inc.",86],["No Azure for Apartheid","No_Azure_for_Apartheid",86],["Dimitri Lascaris","Dimitri_Lascaris",86],["Charlotte Kates","Charlotte_Kates",84],["Al-Awda, The Palestine Right to Return Coalition","Al-Awda_The_Palestine_Right_to_Return_Coalition",80],["David Collier","David_Collier_(journalist)",78],["Ahmed Alnaouq","Ahmed_Alnaouq",77],["Global March to Gaza","2025_Global_March_to_Gaza",72],["Ben M. Freeman","Ben_M._Freeman",71],["United Liberation Front for Palestine","United_Liberation_Front_for_Palestine",69],["Jaldia Abubakra","Jaldia_Abubakra",66],["Saif Abukeshek","Saif_Abukeshek",57],["Wisam Rafeedie","Wisam_Rafeedie",50]],"top_ref_title":"Tom Fletcher (diplomat)","top_ref_n":114,"pages_checked_label":"Nov 4","o_cc_x":203,"o_cc_replies":178,"o_cc_orig":25,"o_cc_from":"Sep 27","o_cc_to":"Nov 3","o_cc_tips":114,"o_cc_tip_articles":34,"o_ss":212,"o_ss_writers":105,"o_ig_like":49,"o_ig_follow":14,"o_ig_comment":13,"o_ig_total":76,"o_fi_x":126,"o_fi_from":"Sep 30","o_fi_to":"Nov 3","o_fw_x":124,"o_fw_from":"Oct 4","o_fw_to":"Nov 3","o_x_total":453,"w_cc":100.0,"w_fi":62.1,"w_fw":61.1,"updated_at":"2026-11-04T14:23+02:00","updated_label":"Nov 4, 14:23"}</script><!--DATA-END-->
+<!--DATA-START--><script id="dash-data" type="application/json">{"g_sent":418,"g_approved":367,"g_in_review":1,"g_rate":87.8,"g_review_line":"1 newer edit waiting for review.","hist":[["Oct 5",26,9],["Oct 6",68,46],["Oct 7",69,52],["Oct 8",93,75],["Oct 9",98,79],["Oct 12",112,91],["Oct 13",112,91],["Oct 14",121,100],["Oct 16",125,104],["Oct 19",137,113],["Oct 20",148,122],["Oct 21",171,140],["Oct 22",192,158],["Oct 23",215,181],["Oct 26",216,182],["Oct 27",241,206],["Oct 28",241,206],["Oct 29",306,267],["Oct 30",319,279],["Nov 2",332,292],["Nov 3",375,328],["Nov 4",418,367]],"r0_lab":"Oct 5, first check","r0_txt":"9 of 26","r0_w":34.6,"r1_lab":"Oct 14","r1_txt":"100 of 121","r1_w":82.6,"r2_lab":"Nov 4, latest","r2_txt":"367 of 418","r2_w":87.8,"g_requests":35,"g_created":22,"g_pages_improved":242,"top":[["Muslim Brotherhood","https://grokipedia.com/page/Muslim_Brotherhood",14],["Hamas","https://grokipedia.com/page/Hamas",13],["Roy Altman","https://grokipedia.com/page/Roy_Altman",12],["Council on American–Islamic Relations","https://grokipedia.com/page/Council_on_American%E2%80%93Islamic_Relations",9],["Popular Front for the Liberation of Palestine","https://grokipedia.com/page/Popular_Front_for_the_Liberation_of_Palestine",8],["Al-Awda, The Palestine Right to Return Coalition","https://grokipedia.com/page/Al-Awda_The_Palestine_Right_to_Return_Coalition",7]],"g_sov_approved":4,"map_articles":1020,"map_matched":956,"map_missing":36,"pages":[["Tom Fletcher (diplomat)","Tom_Fletcher_(diplomat)",114],["Solicitors Disciplinary Tribunal","Solicitors_Disciplinary_Tribunal",105],["Mark Goldfeder","Mark_Goldfeder",104],["Karl Skorecki","Karl_Skorecki",97],["Israeli Sociological Society","Israeli_Sociological_Society",91],["Resist, Inc.","Resist_Inc.",86],["No Azure for Apartheid","No_Azure_for_Apartheid",86],["Dimitri Lascaris","Dimitri_Lascaris",86],["Charlotte Kates","Charlotte_Kates",84],["Al-Awda, The Palestine Right to Return Coalition","Al-Awda_The_Palestine_Right_to_Return_Coalition",80],["David Collier","David_Collier_(journalist)",78],["Ahmed Alnaouq","Ahmed_Alnaouq",77],["Global March to Gaza","2025_Global_March_to_Gaza",72],["Ben M. Freeman","Ben_M._Freeman",71],["United Liberation Front for Palestine","United_Liberation_Front_for_Palestine",69],["Jaldia Abubakra","Jaldia_Abubakra",66],["Saif Abukeshek","Saif_Abukeshek",57],["Wisam Rafeedie","Wisam_Rafeedie",50]],"top_ref_title":"Tom Fletcher (diplomat)","top_ref_n":114,"pages_checked_label":"Nov 4","o_cc_x":203,"o_cc_replies":178,"o_cc_orig":25,"o_cc_from":"Sep 27","o_cc_to":"Nov 3","o_cc_tips":114,"o_cc_tip_articles":34,"o_ss":212,"o_ss_writers":105,"o_ig_like":49,"o_ig_follow":14,"o_ig_comment":13,"o_ig_total":76,"o_fi_x":126,"o_fi_from":"Sep 30","o_fi_to":"Nov 3","o_fw_x":124,"o_fw_from":"Oct 4","o_fw_to":"Nov 3","o_x_total":453,"w_cc":100.0,"w_fi":62.1,"w_fw":61.1,"updated_at":"2026-11-04T14:27+02:00","updated_label":"Nov 4, 14:27"}</script><!--DATA-END-->
 <script>
 const D=JSON.parse(document.getElementById('dash-data').textContent);const DATA={pages:D.pages,top:D.top,hist:D.hist};
 
@@ -328,14 +345,14 @@ document.getElementById('toplist').innerHTML=DATA.top.map(p=>`<div class="li"><a
 // chart
 (function(){const s=document.getElementById('growth'),W=1000,H=320,L=50,R=20,T=20,B=40,h=DATA.hist,n=h.length,max=Math.max(100,Math.ceil(Math.max(...h.map(d=>d[1]))/100)*100);
  const x=i=>L+i*(W-L-R)/(n-1),y=v=>H-B-v/max*(H-T-B);let g='';
- for(let v=0;v<=max;v+=max/4){g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="rgba(255,255,255,.07)"/><text x="${L-10}" y="${y(v)+4}" fill="#7F89AD" font-size="12" text-anchor="end">${v}</text>`}
- [...new Set([0,Math.round((n-1)/4),Math.round((n-1)/2),Math.round(3*(n-1)/4),n-1])].forEach(i=>g+=`<text x="${x(i)}" y="${H-12}" fill="#7F89AD" font-size="12" text-anchor="middle">${h[i][0]}</text>`);
+ for(let v=0;v<=max;v+=max/4){g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#E3E8F3"/><text x="${L-10}" y="${y(v)+4}" fill="#56617F" font-size="12" text-anchor="end">${v}</text>`}
+ [...new Set([0,Math.round((n-1)/4),Math.round((n-1)/2),Math.round(3*(n-1)/4),n-1])].forEach(i=>g+=`<text x="${x(i)}" y="${H-12}" fill="#56617F" font-size="12" text-anchor="middle">${h[i][0]}</text>`);
  const pts=k=>h.map((d,i)=>`${x(i)},${y(d[k])}`).join(' ');
- g+=`<polygon class="areaf" points="${x(0)},${y(0)} ${pts(2)} ${x(n-1)},${y(0)}" fill="rgba(255,209,102,.12)"/>`;
- g+=`<polyline class="draw" points="${pts(1)}" fill="none" stroke="#7FB0FF" stroke-width="3.5" stroke-linejoin="round"/>`;
- g+=`<polyline class="draw" points="${pts(2)}" fill="none" stroke="#FFD166" stroke-width="4" stroke-linejoin="round"/>`;
- g+=`<circle class="areaf" cx="${x(n-1)}" cy="${y(h[n-1][2])}" r="7" fill="#FFD166"/><text class="areaf" x="${x(n-1)-40}" y="${y(h[n-1][2])+44}" fill="#FFD166" font-size="15" font-weight="800" text-anchor="end">${h[n-1][2]} approved</text>`;
- g+=`<circle class="areaf" cx="${x(n-1)}" cy="${y(h[n-1][1])}" r="6" fill="#7FB0FF"/><text class="areaf" x="${x(n-1)-12}" y="${y(h[n-1][1])-10}" fill="#7FB0FF" font-size="15" font-weight="800" text-anchor="end">${h[n-1][1]} sent</text>`;
+ g+=`<polygon class="areaf" points="${x(0)},${y(0)} ${pts(2)} ${x(n-1)},${y(0)}" fill="rgba(217,154,0,.12)"/>`;
+ g+=`<polyline class="draw" points="${pts(1)}" fill="none" stroke="#2F64D6" stroke-width="3.5" stroke-linejoin="round"/>`;
+ g+=`<polyline class="draw" points="${pts(2)}" fill="none" stroke="#B87A00" stroke-width="4" stroke-linejoin="round"/>`;
+ g+=`<circle class="areaf" cx="${x(n-1)}" cy="${y(h[n-1][2])}" r="7" fill="#B87A00"/><text class="areaf" x="${x(n-1)-40}" y="${y(h[n-1][2])+44}" fill="#B87A00" font-size="15" font-weight="800" text-anchor="end">${h[n-1][2]} approved</text>`;
+ g+=`<circle class="areaf" cx="${x(n-1)}" cy="${y(h[n-1][1])}" r="6" fill="#2F64D6"/><text class="areaf" x="${x(n-1)-12}" y="${y(h[n-1][1])-10}" fill="#2F64D6" font-size="15" font-weight="800" text-anchor="end">${h[n-1][1]} sent</text>`;
  s.innerHTML=g;})();
 
 const q=new URLSearchParams(location.search);const STILL=q.has('still');if(STILL)document.body.classList.add('still');
