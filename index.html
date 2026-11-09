@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Two projects, one team</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F5F7FC;--p:#FFFFFF;--p2:#F8F9FE;--ink:#13203F;--mute:#4A5675;--blue:#3B6FE0;--blue2:#2F64D6;--amber:#D96C0A;--teal:#0C9A78;--gold:#B87A00;--pink:#D93B70;--violet:#6E4FD8}
+body{background:radial-gradient(900px 600px at 100% 0%,rgba(120,150,255,.16),transparent 60%),radial-gradient(800px 700px at 0% 100%,rgba(190,160,255,.14),transparent 60%),linear-gradient(180deg,#F8F9FF,#EEF1FB);background-attachment:fixed;color:var(--ink);font-family:Inter,Poppins,system-ui,sans-serif;min-height:100vh}
+a{color:var(--blue2);text-decoration:none;font-weight:600} a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:40px 28px 60px}
+header .k{font:700 14px Poppins;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+header h1{font:800 54px/1.05 Poppins;letter-spacing:-1.5px;margin-top:10px}
+header h1 span{color:var(--teal)}
+header p{color:var(--mute);font-size:19px;margin-top:10px}
+.tabs{display:flex;gap:8px;margin:28px 0 22px;background:var(--p);padding:6px;border-radius:16px;width:max-content;border:1px solid rgba(255,255,255,.06)}
+.tab{font:700 16px Poppins;color:var(--mute);padding:11px 20px;border-radius:12px;cursor:pointer;border:0;background:none;transition:.25s}
+.tab:hover{color:var(--ink)} .tab.on{background:var(--ink);color:#0A0F1F}
+.view{display:none;animation:fade .5s ease} .view.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.cap{color:var(--mute);font-size:16px;margin:-4px 0 18px}
+h2{font:700 26px Poppins;margin:30px 0 8px}
+/* hero */
+.hero{display:flex;gap:30px;align-items:center;padding:26px 30px;border-radius:24px;cursor:pointer;position:relative;overflow:hidden;
+background:linear-gradient(110deg,rgba(255,209,102,.18),rgba(79,140,255,.14));border:1px solid rgba(255,209,102,.45);transition:transform .2s}
+.hero:hover{transform:translateY(-3px) scale(1.005)}
+.ring{width:180px;height:180px;position:relative;flex:none}
+.ring circle.fg{transition:stroke-dashoffset 2s cubic-bezier(.2,.8,.2,1)}
+.ring .pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font:800 40px Poppins;color:var(--gold)}
+.ring small{font:600 12px Inter;letter-spacing:2px;color:var(--mute)}
+.big{font:800 72px/1 Poppins;letter-spacing:-2px}.big span{color:var(--mute);font-size:36px}
+.hero h3{font-size:22px;margin-top:6px}.hero p{color:var(--mute);margin-top:6px;font-size:16px}
+.hint{font-size:13px;color:var(--gold);margin-top:10px;font-weight:600}
+/* flow */
+.flow{display:flex;gap:10px;flex-wrap:wrap}
+.st{flex:1 1 130px;background:var(--p);border-radius:16px;padding:14px;border:1px solid rgba(255,255,255,.06);transition:.25s;position:relative;cursor:default}
+.st:hover{transform:translateY(-4px);border-color:var(--c,var(--blue))}
+.st .e{font-size:26px} .st b{display:block;font-size:15px;margin-top:6px} .st span{font-size:13px;color:var(--mute);display:block;margin-top:3px;line-height:1.35}
+.st.hold{border:1.5px dashed var(--gold)}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{perspective:1200px;height:300px;cursor:pointer}
+.inner{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.card.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:20px;background:var(--p);border:1px solid rgba(255,255,255,.07);border-top:4px solid var(--c)}
+.card:hover .front{box-shadow:0 14px 40px -12px var(--c)}
+.front .v{font:800 56px/1 Poppins;color:var(--c);letter-spacing:-1px;margin-top:6px}.front .v small{font-size:24px;color:var(--mute)}
+.front h4{font-size:19px;margin-top:12px}.front p{color:var(--mute);font-size:14.5px;margin-top:6px;line-height:1.4}
+.front .tap{position:absolute;bottom:16px;left:20px;font-size:12.5px;color:var(--c);font-weight:700;letter-spacing:.5px}
+.front .em{font-size:28px}
+.back{transform:rotateY(180deg);overflow:auto;background:var(--p2);scrollbar-width:thin;scrollbar-color:var(--c) transparent}
+.back h5{font-size:15px;color:var(--c);margin-bottom:8px}
+.back .mean{font-size:13.5px;color:var(--ink);background:rgba(255,255,255,.06);padding:8px 10px;border-radius:10px;margin-top:10px;line-height:1.4}
+.back .mean b{color:var(--c)}
+.li{display:flex;justify-content:space-between;gap:8px;font-size:13.5px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.li span{color:var(--mute);white-space:nowrap}
+.bar{height:7px;border-radius:4px;background:var(--c);margin:2px 0 6px;width:0;transition:width 1s ease}
+.card.flip .bar{width:var(--w)}
+.tl{font-size:13.5px;padding:5px 0 5px 16px;border-left:2px solid var(--c);margin-left:4px;position:relative}
+.tl:before{content:"";position:absolute;left:-6px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--c)}
+.tl.x:before{background:var(--pink)}
+/* chart */
+.chart{background:var(--p);border-radius:20px;padding:20px 22px;border:1px solid rgba(255,255,255,.06)}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;gap:18px;font-size:13.5px;color:var(--mute);margin-bottom:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.draw{stroke-dasharray:3000;stroke-dashoffset:3000}
+.view.on .draw{animation:draw 2.4s ease forwards .2s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.areaf{opacity:0}.view.on .areaf{animation:fadein 1.2s ease forwards 1.6s}@keyframes fadein{to{opacity:1}}
+/* outreach */
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.pill{font:700 14px Inter;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,159,67,.4);color:var(--amber);background:rgba(255,159,67,.08);cursor:pointer;transition:.2s}
+.pill:hover{background:rgba(255,159,67,.2)} .pill.on{background:var(--amber);color:#0A0F1F}
+.bars{display:flex;flex-direction:column;gap:12px}
+.brow{display:grid;grid-template-columns:140px 1fr 60px;align-items:center;gap:12px;font-size:15px;transition:opacity .3s}
+.brow .tr{height:22px;background:rgba(255,255,255,.06);border-radius:8px;overflow:hidden}
+.brow .fl{height:100%;width:0;border-radius:8px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.brow b{font:800 18px Poppins;text-align:right}
+.brow.dim{opacity:.25}
+.og{display:none}.og.on{display:grid;animation:fade .4s}
+/* team */
+.org{background:var(--p);border-radius:22px;padding:26px;display:flex;flex-direction:column;align-items:center;gap:14px;border:1px solid rgba(255,255,255,.06)}
+.you{font:800 20px Poppins;padding:10px 30px;border-radius:999px;background:var(--teal);color:#0A0F1F;box-shadow:0 0 0 0 rgba(46,230,184,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 16px rgba(46,230,184,0)}100%{box-shadow:0 0 0 0 rgba(46,230,184,0)}}
+.vl{width:2px;height:22px;background:linear-gradient(var(--teal),transparent)}
+.leads{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.lead{min-width:180px;text-align:center;padding:12px;border-radius:16px;background:rgba(46,230,184,.1);border:1px solid rgba(46,230,184,.4);transition:.2s}
+.lead:hover{transform:translateY(-4px);background:rgba(46,230,184,.2)}
+.lead b{font-size:18px;display:block}.lead span{font-size:13px;color:var(--mute)}
+.chain{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;align-items:center}
+.chip{font-size:14px;font-weight:600;padding:7px 12px;border-radius:10px;background:#22305A;opacity:.35;transition:.3s}
+.chip.lit{opacity:1;background:var(--teal);color:#0A0F1F;transform:scale(1.08)}
+.chev{color:var(--teal);font-weight:800}
+.lab{font-size:12.5px;letter-spacing:2px;color:var(--mute);font-weight:700;text-transform:uppercase}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.rules .card{height:200px}
+body.still .draw{animation:none!important;stroke-dashoffset:0}body.still .areaf{animation:none!important;opacity:1}body.still *{transition:none!important}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+footer{margin-top:34px;color:#7F89AD;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* light theme */
+.tabs,.st,.face,.chart,.org{border:1px solid #E1E6F2;box-shadow:0 6px 22px -12px rgba(30,45,90,.25)}
+.face{border-top:4px solid var(--c)}
+.st.hold{border:1.5px dashed var(--gold)}
+.tab.on{background:var(--blue);color:#FFFFFF}
+.hero{background:linear-gradient(110deg,#FFF6DD,#E8F0FF);border:1px solid #F0D58A;box-shadow:0 10px 30px -16px rgba(184,122,0,.45)}
+.back .mean{background:#EEF2FB}
+.li{border-bottom:1px solid #E6EAF4}
+.brow .tr{background:#E9EDF6}
+.pill{border:1px solid rgba(217,108,10,.45);background:rgba(217,108,10,.07)}
+.pill.on{background:var(--amber);color:#FFFFFF}
+.you,.chip.lit{color:#06231B}
+.chip{background:#DDE3F1;color:var(--ink);opacity:.55}
+.chip.lit{opacity:1}
+.lead{background:rgba(12,154,120,.08);border:1px solid rgba(12,154,120,.35)}
+footer{color:#56617F}
+.accts{grid-template-columns:repeat(2,1fr);margin-bottom:8px}
+@media(max-width:860px){.grid,.rules,.accts{grid-template-columns:1fr}.hero{flex-direction:column;text-align:center}header h1{font-size:40px}}
+</style></head><body>
+<canvas id="confetti"></canvas>
+<div class="wrap">
+<header>
+  <div class="k">Two projects · one team</div>
+  <h1>Shaping what the <span>future learns from</span></h1>
+  <p>Better sources for the AI models people learn from, and real reach for real reporting.</p>
+</header>
+
+<div class="tabs" role="tablist">
+  <button class="tab on" data-v="g">📚 Grokipedia</button>
+  <button class="tab" data-v="o">📣 Outreach</button>
+  <button class="tab" data-v="t">🤝 The team</button>
+</div>
+
+<!-- GROKIPEDIA -->
+<section class="view on" id="v-g">
+  <p class="cap">Grokipedia feeds the AI models people learn from. Better pages mean better answers.</p>
+
+  <div class="hero" id="hero">
+    <div class="ring"><svg viewBox="0 0 180 180" width="180" height="180"><circle cx="90" cy="90" r="76" fill="none" stroke="#E3E8F3" stroke-width="16"/><circle class="fg" id="ringfg" cx="90" cy="90" r="76" fill="none" stroke="#B87A00" stroke-width="16" stroke-linecap="round" stroke-dasharray="477.5" stroke-dashoffset="477.5" transform="rotate(-90 90 90)"/></svg>
+      <div class="pct"><span><span class="cu" data-k="g_rate" data-to="87.5" data-dec="1">0</span>%</span><small>APPROVED</small></div></div>
+    <div>
+      <div class="big"><span class="cu" data-k="g_approved" data-to="328" style="color:var(--ink);font-size:72px;letter-spacing:-2px">0</span> <span>of <span data-k="g_sent">375</span></span></div>
+      <h3><span data-k="g_hero_sub">edits approved across both accounts</span></h3>
+      <p><span data-k="g_review_line">Zero still waiting for review.</span></p>
+      <div class="hint">🎉 Tap to celebrate</div>
+    </div>
+  </div>
+
+  <h2>By account</h2>
+  <p class="cap">Headline numbers above are the combined total. Each account below.</p>
+  <div class="grid accts">
+    <div class="card" style="--c:var(--blue2)"><div class="inner">
+      <div class="face front"><div class="em">👤</div><div class="v"><span class="cu" data-k="a_lc_approved" data-to="417">0</span><small> of <span data-k="a_lc_sent">472</span></small></div>
+        <h4><span data-k="a_lc_name">Account A</span></h4>
+        <p><span class="cu" data-k="a_lc_rate" data-to="88.3" data-dec="1">0</span>% approved · <span data-k="a_lc_created">30</span> of <span data-k="a_lc_requests">49</span> pages created</p>
+        <div class="tap">TAP FOR DETAILS ↻</div></div>
+      <div class="face back"><h5><span data-k="a_lc_name">Account A</span></h5>
+        <div class="mean" style="margin:0 0 10px"><b>What this means.</b> The original account. Growth chart and pages-improved counts are from this account.</div>
+        <div class="li">Edits sent<span data-k="a_lc_sent">472</span></div>
+        <div class="li">Approved<span data-k="a_lc_approved">417</span></div>
+        <div class="li">Rejected<span data-k="a_lc_rejected">55</span></div>
+        <div class="li">Approval rate<span><span data-k="a_lc_rate">88.3</span>%</span></div>
+        <div class="li">Article requests<span data-k="a_lc_requests">49</span></div>
+        <div class="li">Created<span data-k="a_lc_created">30</span></div>
+        <div class="li">As of<span data-k="a_lc_as_of">Nov 9, 08:55</span></div>
+        </div></div></div>
+    <div class="card" style="--c:var(--teal)"><div class="inner">
+      <div class="face front"><div class="em">📰</div><div class="v"><span class="cu" data-k="a_az_approved" data-to="303">0</span><small> of <span data-k="a_az_sent">333</span></small></div>
+        <h4><span data-k="a_az_name">Account B</span></h4>
+        <p><span class="cu" data-k="a_az_rate" data-to="91.0" data-dec="1">0</span>% approved · <span data-k="a_az_created">10</span> of <span data-k="a_az_requests">20</span> pages created</p>
+        <div class="tap">TAP FOR DETAILS ↻</div></div>
+      <div class="face back"><h5><span data-k="a_az_name">Account B</span></h5>
+        <div class="mean" style="margin:0 0 10px"><b>What this means.</b> The second account. Counts come from its activity page reads.</div>
+        <div class="li">Edits sent<span data-k="a_az_sent">333</span></div>
+        <div class="li">Approved<span data-k="a_az_approved">303</span></div>
+        <div class="li">Rejected<span data-k="a_az_rejected">30</span></div>
+        <div class="li">Approval rate<span><span data-k="a_az_rate">91.0</span>%</span></div>
+        <div class="li">Article requests<span data-k="a_az_requests">20</span></div>
+        <div class="li">Created<span data-k="a_az_created">10</span></div>
+        <div class="li">As of<span data-k="a_az_as_of">Nov 9, 11:04</span></div>
+        </div></div></div>
+  </div>
+
+  <h2>How it works</h2>
+  <p class="cap">Seven steps, with a person approving before anything goes out.</p>
+  <div class="flow" style="--c:var(--blue)">
+    <div class="st"><div class="e">🔎</div><b>Find</b><span>New articles and missing pages</span></div>
+    <div class="st"><div class="e">🧩</div><b>Match</b><span>Each source to the right page</span></div>
+    <div class="st"><div class="e">📑</div><b>Research</b><span>Check every fact</span></div>
+    <div class="st"><div class="e">✍️</div><b>Write</b><span>Citations and new page requests</span></div>
+    <div class="st hold"><div class="e">✅</div><b>Approve</b><span>A daily go. Sensitive sources held.</span></div>
+    <div class="st"><div class="e">🚀</div><b>Submit</b><span>Grokipedia's reviewers decide</span></div>
+    <div class="st"><div class="e">📈</div><b>Track</b><span>Record results, recheck pages</span></div>
+  </div>
+
+  <h2>Wins</h2>
+  <p class="cap">Tap any card to see what's behind it.</p>
+  <div class="grid">
+    <div class="card" style="--c:var(--blue2)"><div class="inner">
+      <div class="face front"><div class="em">🆕</div><div class="v"><span class="cu" data-k="g_created" data-to="22">0</span></div><h4>new Grokipedia pages</h4><p>Created from <span data-k="g_requests">35</span> page requests.</p><div class="tap">TAP TO SEE THE PAGES ↻</div></div>
+      <div class="face back"><h5>Live today, with reference counts</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Topics Grokipedia had nothing on now have full, sourced pages. Some, like United Liberation Front for Palestine, have no Wikipedia page at all.</div>
+        <div id="pagelist"></div>
+        </div></div></div>
+
+    <div class="card" style="--c:var(--teal)"><div class="inner">
+      <div class="face front"><div class="em">📖</div><div class="v"><span class="cu" data-k="top_ref_n" data-to="114">0</span></div><h4>references on one new page</h4><p><span data-k="top_ref_title">Tom Fletcher (diplomat)</span> leads the pack.</p><div class="tap">TAP FOR THE TOP FIVE ↻</div></div>
+      <div class="face back"><h5>Most-referenced new pages</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> These pages are deeply sourced. Counts include every reference on the page.</div><div id="reflist"></div>
+        </div></div></div>
+
+    <div class="card" style="--c:var(--gold)"><div class="inner">
+      <div class="face front"><div class="em">🗺️</div><div class="v"><span class="cu" data-k="g_pages_improved" data-to="210">0</span></div><h4>pages improved</h4><p><span data-k="g_pages_improved_note">Account A only</span>. Each one through an approved edit.</p><div class="tap">TAP FOR THE MOST-IMPROVED ↻</div></div>
+      <div class="face back"><h5>Most approved edits per page</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> The biggest pages got the most attention, one checked fact at a time.</div><div id="toplist"></div>
+        </div></div></div>
+
+    <div class="card" style="--c:var(--pink)"><div class="inner">
+      <div class="face front"><div class="em">🔁</div><div class="v"><span class="cu" data-k="g_sov_approved" data-to="4">0</span></div><h4>additions to Sovereign Media</h4><p>Sent Oct 16. All four live by Oct 20.</p><div class="tap">TAP FOR THE STORY ↻</div></div>
+      <div class="face back"><h5>Oct 16 to Oct 20</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Real review, real fixes. A "no" became a "yes".</div>
+        <div class="tl">Oct 16 · four additions sent</div>
+        <div class="tl x">Oct 19 · three approved, one turned down for the wrong section</div>
+        <div class="tl">Oct 19 · moved to the right section</div>
+        <div class="tl">Oct 20 · approved</div>
+        <p style="margin-top:8px;font-size:13.5px"><a href="https://grokipedia.com/page/Sovereign_Media" target="_blank">Open the live page →</a></p>
+        </div></div></div>
+
+    <div class="card" style="--c:var(--violet)"><div class="inner">
+      <div class="face front"><div class="em">🧭</div><div class="v"><span class="cu" data-k="map_matched" data-to="956">0</span><small> of <span data-k="map_articles">1,020</span></small></div><h4>archive articles mapped</h4><p>The whole Jewish Onliner archive.</p><div class="tap">TAP FOR DETAILS ↻</div></div>
+      <div class="face back"><h5>One pass, the whole map</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Every edit and new page started from this map.</div>
+        <div class="li">Articles read<span data-k="map_articles">1,020</span></div>
+        <div class="li">Matched to pages they improve<span data-k="map_matched">956</span></div>
+        <div class="li">Pointed to missing pages<span data-k="map_missing">36</span></div>
+        </div></div></div>
+
+    <div class="card" style="--c:var(--amber)"><div class="inner">
+      <div class="face front"><div class="em">🏆</div><div class="v"><span class="cu" data-k="g_rate" data-to="87.5" data-dec="1">0</span><small>%</small></div><h4>approval rate</h4><p>Up from <span data-k="r0_txt">9 of 26</span> on day one.</p><div class="tap">TAP TO COMPARE ↻</div></div>
+      <div class="face back"><h5>Approval rate over time (Account A)</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> The team learned from every rejection. Timeline is Account A only.</div>
+        <div class="li"><em data-k="r0_lab" style="font-style:normal">Oct 5, first check</em><span data-k="r0_txt">9 of 26</span></div>
+        <div class="bar" data-kw="r0_w" style="--w:34.6%"></div>
+        <div class="li"><em data-k="r1_lab" style="font-style:normal">Oct 14</em><span data-k="r1_txt">100 of 121</span></div>
+        <div class="bar" data-kw="r1_w" style="--w:83%"></div>
+        <div class="li"><em data-k="r2_lab" style="font-style:normal">Nov 3, latest</em><span data-k="r2_txt">328 of 375</span></div>
+        <div class="bar" data-kw="r2_w" style="--w:87.5%"></div>
+        </div></div></div>
+  </div>
+
+  <h2>Growth</h2>
+  <p class="cap"><span data-k="g_hist_note">Account A only</span>: edits sent and approved, from the first check on Oct 5 to today.</p>
+  <div class="chart">
+    <div class="legend"><span><i style="background:var(--blue2)"></i>Sent</span><span><i style="background:var(--gold)"></i>Approved</span></div>
+    <svg id="growth" viewBox="0 0 1000 320"></svg>
+  </div>
+</section>
+
+<!-- OUTREACH -->
+<section class="view" id="v-o">
+  <p class="cap">Every new article reaches the people who'd care, in each outlet's own voice.</p>
+  <div class="flow">
+    <div class="st" style="--c:var(--amber)"><div class="e">📰</div><b>Publish</b><span>A new article goes live</span></div>
+    <div class="st" style="--c:var(--amber)"><div class="e">🎯</div><b>Pick people</b><span>Who already talk about it</span></div>
+    <div class="st" style="--c:var(--amber)"><div class="e">🛡️</div><b>No spam</b><span>30 days between contacts</span></div>
+    <div class="st" style="--c:var(--amber)"><div class="e">💬</div><b>Tip off</b><span>A personal note, one person at a time</span></div>
+    <div class="st" style="--c:var(--amber)"><div class="e">📲</div><b>Share</b><span>X, Instagram and Substack</span></div>
+  </div>
+
+  <h2>Reach</h2>
+  <div class="pills" id="outlets">
+    <button class="pill on" data-o="all">All outlets</button>
+    <button class="pill" data-o="cc">Crosscurrents</button>
+    <button class="pill" data-o="fi">The Fiscalist</button>
+    <button class="pill" data-o="fw">FutureWire</button>
+  </div>
+
+  <div class="chart" style="margin-bottom:16px">
+    <div class="legend"><span>Public posts and replies on X</span></div>
+    <div class="bars" id="xbars">
+      <div class="brow" data-o="cc"><span>Crosscurrents</span><div class="tr"><div class="fl" style="background:var(--amber)" data-kx="o_cc_x" data-w="195"></div></div><b data-k="o_cc_x">195</b></div>
+      <div class="brow" data-o="fi"><span>The Fiscalist</span><div class="tr"><div class="fl" style="background:var(--teal)" data-kx="o_fi_x" data-w="121"></div></div><b data-k="o_fi_x">121</b></div>
+      <div class="brow" data-o="fw"><span>FutureWire</span><div class="tr"><div class="fl" style="background:var(--violet)" data-kx="o_fw_x" data-w="120"></div></div><b data-k="o_fw_x">120</b></div>
+    </div>
+  </div>
+
+  <div class="grid og on" data-o="all">
+    <div class="card" style="--c:var(--amber)"><div class="inner">
+      <div class="face front"><div class="em">🐦</div><div class="v"><span class="cu" data-k="o_x_total" data-to="436">0</span></div><h4>X posts and replies</h4><p>Across all three outlets.</p><div class="tap">TAP FOR THE SPLIT ↻</div></div>
+      <div class="face back"><h5>By outlet</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Hundreds of conversations joined, each under our own account.</div>
+        <div class="li">Crosscurrents<span data-k="o_cc_x">195</span></div><div class="bar" data-kw="w_cc" style="--w:100%"></div>
+        <div class="li">The Fiscalist<span data-k="o_fi_x">121</span></div><div class="bar" data-kw="w_fi" style="--w:62%"></div>
+        <div class="li">FutureWire<span data-k="o_fw_x">120</span></div><div class="bar" data-kw="w_fw" style="--w:61.5%"></div>
+        </div></div></div>
+    <div class="card" style="--c:var(--teal)"><div class="inner">
+      <div class="face front"><div class="em">💌</div><div class="v"><span class="cu" data-k="o_cc_tips" data-to="106">0</span></div><h4>personal tip-offs</h4><p>From Crosscurrents, about <span data-k="o_cc_tip_articles">32</span> articles.</p><div class="tap">TAP FOR THE RULE ↻</div></div>
+      <div class="face back"><h5>The 30-day rule</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Real reach, zero spam.</div><p style="font-size:14px;line-height:1.45">Each tip-off goes to someone who recently posted about the same story. Nobody hears from us twice within 30 days.</p>
+        </div></div></div>
+    <div class="card" style="--c:var(--violet)"><div class="inner">
+      <div class="face front"><div class="em">✉️</div><div class="v"><span class="cu" data-k="o_ss" data-to="205">0</span></div><h4>Substack comments</h4><p>Across <span data-k="o_ss_writers">104</span> different writers.</p><div class="tap">TAP FOR AN EXAMPLE ↻</div></div>
+      <div class="face back"><h5>Where readers already talk</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> In front of readers of more than a hundred other writers.</div><p style="font-size:14px;line-height:1.45">Crosscurrents joins the comments on other writers' posts, like this one on China's AI outreach to the Global South.</p>
+        <p style="margin-top:8px;font-size:13.5px"><a target="_blank" href="https://www.sinicapodcast.com/p/the-us-wants-global-south-countries/comment/376949098">See the comment →</a></p>
+        </div></div></div>
+  </div>
+
+  <div class="grid og" data-o="cc">
+    <div class="card" style="--c:var(--amber)"><div class="inner">
+      <div class="face front"><div class="em">🐦</div><div class="v"><span class="cu" data-k="o_cc_x" data-to="195">0</span></div><h4>posts and replies on X</h4><p><span data-k="o_cc_replies">172</span> replies and <span data-k="o_cc_orig">23</span> original posts.</p><div class="tap">TAP FOR AN EXAMPLE ↻</div></div>
+      <div class="face back"><h5>@Crosscurrents21</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Showing up in the conversations that matter.</div><p style="font-size:14px">Logged from <span data-k="o_cc_from">Sep 27</span> to <span data-k="o_cc_to">Nov 2</span>.</p><p style="margin-top:8px;font-size:13.5px"><a target="_blank" href="https://x.com/Crosscurrents21/status/2117316246358159516">See a reply →</a></p></div></div></div>
+    <div class="card" style="--c:var(--teal)"><div class="inner">
+      <div class="face front"><div class="em">💌</div><div class="v"><span class="cu" data-k="o_cc_tips" data-to="106">0</span></div><h4>personal tip-offs</h4><p>About <span data-k="o_cc_tip_articles">32</span> different articles.</p><div class="tap">TAP FOR THE RULE ↻</div></div>
+      <div class="face back"><h5>The 30-day rule</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Relevant, and never repeated.</div><p style="font-size:14px;line-height:1.45">Only people who just posted about the story. Never twice within 30 days.</p></div></div></div>
+    <div class="card" style="--c:var(--violet)"><div class="inner">
+      <div class="face front"><div class="em">📸</div><div class="v"><span class="cu" data-k="o_ss" data-to="205">0</span></div><h4>Substack comments</h4><p>Plus <span data-k="o_ig_total">76</span> Instagram likes, follows and comments.</p><div class="tap">TAP FOR THE SPLIT ↻</div></div>
+      <div class="face back"><h5>Beyond X</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> One story, many places people read.</div>
+        <div class="li">Substack comments<span data-k="o_ss">205</span></div>
+        <div class="li">Substack writers reached<span data-k="o_ss_writers">104</span></div>
+        <div class="li">Instagram likes<span data-k="o_ig_like">49</span></div>
+        <div class="li">Instagram follows<span data-k="o_ig_follow">14</span></div>
+        <div class="li">Instagram comments<span data-k="o_ig_comment">13</span></div>
+        </div></div></div>
+  </div>
+
+  <div class="grid og" data-o="fi">
+    <div class="card" style="--c:var(--teal)"><div class="inner">
+      <div class="face front"><div class="em">💹</div><div class="v"><span class="cu" data-k="o_fi_x" data-to="121">0</span></div><h4>public replies on X</h4><p>Finance, tech and markets.</p><div class="tap">TAP FOR AN EXAMPLE ↻</div></div>
+      <div class="face back"><h5>@The_Fiscalist</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> A sharp market voice where investors already gather.</div><p style="font-size:14px">Logged from <span data-k="o_fi_from">Oct 1</span> to <span data-k="o_fi_to">Nov 2</span>.</p><p style="margin-top:8px;font-size:13.5px"><a target="_blank" href="https://x.com/The_Fiscalist/status/2117290580560511486">See a reply →</a></p></div></div></div>
+    <div class="card" style="--c:var(--gold)"><div class="inner">
+      <div class="face front"><div class="em">🎙️</div><h4>Its voice</h4><p>Sharp and numbers-first, on AI, tech, fintech and markets.</p><div class="tap">TAP ↻</div></div>
+      <div class="face back"><h5>How it sounds</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Each outlet speaks like itself, never like a template.</div><p style="font-size:14px;line-height:1.45">Tip-offs and replies are written in The Fiscalist's own style, for readers who follow money and markets.</p></div></div></div>
+  </div>
+
+  <div class="grid og" data-o="fw">
+    <div class="card" style="--c:var(--violet)"><div class="inner">
+      <div class="face front"><div class="em">🚀</div><div class="v"><span class="cu" data-k="o_fw_x" data-to="120">0</span></div><h4>public replies on X</h4><p>Optimistic, future-facing stories.</p><div class="tap">TAP FOR AN EXAMPLE ↻</div></div>
+      <div class="face back"><h5>@FutureWire__</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> A fun, hopeful voice on tech and the future.</div><p style="font-size:14px">Logged from <span data-k="o_fw_from">Oct 4</span> to <span data-k="o_fw_to">Nov 2</span>.</p><p style="margin-top:8px;font-size:13.5px"><a target="_blank" href="https://x.com/FutureWire__/status/2112558716570784091">See a reply →</a></p></div></div></div>
+    <div class="card" style="--c:var(--gold)"><div class="inner">
+      <div class="face front"><div class="em">🎙️</div><h4>Its voice</h4><p>Optimistic, quirky and future-facing. Focus on the West, India and Israel.</p><div class="tap">TAP ↻</div></div>
+      <div class="face back"><h5>How it sounds</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Each outlet speaks like itself, never like a template.</div><p style="font-size:14px;line-height:1.45">Replies are upbeat and curious, for readers excited about what comes next.</p></div></div></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="view" id="v-t">
+  <p class="cap">You talk to three leads. They handle the rest.</p>
+  <div class="org">
+    <div class="you">You</div><div class="vl"></div>
+    <div class="leads">
+      <div class="lead"><b>🎩 Butler</b><span>Main contact</span></div>
+      <div class="lead"><b>📚 Grokmeister</b><span>Runs Grokipedia</span></div>
+      <div class="lead"><b>🔧 Fixer</b><span>Fixes problems</span></div>
+    </div><div class="vl"></div>
+    <div class="lab">Specialists pass the work along</div>
+    <div class="chain" id="chain">
+      <span class="chip">Find</span><span class="chev">›</span><span class="chip">Match</span><span class="chev">›</span><span class="chip">Edit</span><span class="chev">›</span><span class="chip">Submit</span><span class="chev">›</span><span class="chip">Research</span><span class="chev">›</span><span class="chip">Record</span><span class="chev">›</span><span class="chip">Track</span>
+    </div>
+  </div>
+  <div class="rules">
+    <div class="card" style="--c:var(--teal)"><div class="inner">
+      <div class="face front"><div class="em">📦</div><h4>One bundled ask</h4><p>Questions come up as one request, not twenty.</p><div class="tap">TAP ↻</div></div>
+      <div class="face back"><h5>How it works</h5><p style="font-size:14px;line-height:1.45">Specialists never ask you directly. A lead gathers their questions and brings you one ask.</p></div></div></div>
+    <div class="card" style="--c:var(--gold)"><div class="inner">
+      <div class="face front"><div class="em">✅</div><h4>Approve once</h4><p>A go to any lead holds everywhere.</p><div class="tap">TAP ↻</div></div>
+      <div class="face back"><h5>How it works</h5><p style="font-size:14px;line-height:1.45">Say yes to Butler, Grokmeister or Fixer, and the whole team knows. You're never asked twice.</p></div></div></div>
+    <div class="card" style="--c:var(--pink)"><div class="inner">
+      <div class="face front"><div class="em">⚡</div><h4>Short handoffs</h4><p>Task, context, what to report back.</p><div class="tap">TAP ↻</div></div>
+      <div class="face back"><h5>A real one</h5><p style="font-size:14px;line-height:1.45">When usage hit 99%, one short message paused The Fiscalist's outreach until the limit reset. Urgent messages wake the receiver at once.</p></div></div></div>
+  </div>
+</section>
+
+<footer><span>Every number comes from project records and live page checks. Updated <span data-k="updated_label">Nov 3, 15:30</span> Israel time.</span><span>Built as a team, with you in charge.</span></footer>
+</div>
+
+<!--DATA-START--><script id="dash-data" type="application/json">{"g_sent":805,"g_approved":720,"g_in_review":0,"g_rate":89.4,"g_review_line":"Zero still waiting for review.","hist":[["Oct 5",26,9],["Oct 6",68,46],["Oct 7",69,52],["Oct 8",93,75],["Oct 9",98,79],["Oct 12",112,91],["Oct 13",112,91],["Oct 14",121,100],["Oct 16",125,104],["Oct 19",137,113],["Oct 20",148,122],["Oct 21",171,140],["Oct 22",192,158],["Oct 23",215,181],["Oct 26",216,182],["Oct 27",241,206],["Oct 28",241,206],["Oct 29",306,267],["Oct 30",319,279],["Nov 2",332,292],["Nov 3",375,328],["Nov 4",461,406],["Nov 5",468,413],["Nov 9",472,417]],"r0_lab":"Oct 5, first check","r0_txt":"9 of 26","r0_w":34.6,"r1_lab":"Oct 14","r1_txt":"100 of 121","r1_w":82.6,"r2_lab":"Nov 9, latest","r2_txt":"417 of 472","r2_w":88.3,"g_requests":69,"g_created":40,"g_pages_improved":278,"top":[["Muslim Brotherhood","https://grokipedia.com/page/Muslim_Brotherhood",14],["Hamas","https://grokipedia.com/page/Hamas",13],["Roy Altman","https://grokipedia.com/page/Roy_Altman",12],["Council on American–Islamic Relations","https://grokipedia.com/page/Council_on_American%E2%80%93Islamic_Relations",9],["Popular Front for the Liberation of Palestine","https://grokipedia.com/page/Popular_Front_for_the_Liberation_of_Palestine",8],["Al-Awda, The Palestine Right to Return Coalition","https://grokipedia.com/page/Al-Awda_The_Palestine_Right_to_Return_Coalition",7]],"g_sov_approved":4,"map_articles":1020,"map_matched":956,"map_missing":36,"pages":[["Tom Fletcher (diplomat)","Tom_Fletcher_(diplomat)",114],["Solicitors Disciplinary Tribunal","Solicitors_Disciplinary_Tribunal",105],["Mark Goldfeder","Mark_Goldfeder",104],["Karl Skorecki","Karl_Skorecki",97],["Israeli Sociological Society","Israeli_Sociological_Society",91],["Resist, Inc.","Resist_Inc.",86],["No Azure for Apartheid","No_Azure_for_Apartheid",86],["Dimitri Lascaris","Dimitri_Lascaris",86],["Charlotte Kates","Charlotte_Kates",84],["Al-Awda, The Palestine Right to Return Coalition","Al-Awda_The_Palestine_Right_to_Return_Coalition",80],["David Collier","David_Collier_(journalist)",78],["Ahmed Alnaouq","Ahmed_Alnaouq",77],["Global March to Gaza","2025_Global_March_to_Gaza",72],["Ben M. Freeman","Ben_M._Freeman",71],["United Liberation Front for Palestine","United_Liberation_Front_for_Palestine",69],["Jaldia Abubakra","Jaldia_Abubakra",66],["Saif Abukeshek","Saif_Abukeshek",57],["Wisam Rafeedie","Wisam_Rafeedie",50]],"top_ref_title":"Tom Fletcher (diplomat)","top_ref_n":114,"pages_checked_label":"Nov 9","o_cc_x":216,"o_cc_replies":183,"o_cc_orig":28,"o_cc_from":"Sep 27","o_cc_to":"Nov 5","o_cc_tips":123,"o_cc_tip_articles":37,"o_ss":221,"o_ss_writers":107,"o_ig_like":49,"o_ig_follow":14,"o_ig_comment":13,"o_ig_total":76,"o_fi_x":136,"o_fi_from":"Sep 30","o_fi_to":"Nov 5","o_fw_x":132,"o_fw_from":"Oct 4","o_fw_to":"Nov 5","o_x_total":484,"w_cc":100.0,"w_fi":63.0,"w_fw":61.1,"updated_at":"2026-11-09T11:45+02:00","updated_label":"Nov 9, 11:45","a_lc_name":"Account A","a_lc_sent":472,"a_lc_approved":417,"a_lc_rejected":55,"a_lc_rate":88.3,"a_lc_requests":49,"a_lc_created":30,"a_lc_as_of":"Nov 9, 08:55","a_lc_as_of_iso":"2026-11-09T08:55:00+02:00","a_az_name":"Account B","a_az_sent":333,"a_az_approved":303,"a_az_rejected":30,"a_az_rate":91.0,"a_az_requests":20,"a_az_created":10,"a_az_as_of":"Nov 9, 11:04","a_az_as_of_iso":"2026-11-09T11:04:00+02:00","a_az_rate_shown":"91%","g_rejected":85,"g_accounts":2,"g_hero_sub":"edits approved across both accounts","g_pages_improved_note":"Account A only","g_hist_note":"Account A only"}</script><!--DATA-END-->
+<script>
+const D=JSON.parse(document.getElementById('dash-data').textContent);const DATA={pages:D.pages,top:D.top,hist:D.hist};
+
+// bind data
+const fmt=v=>typeof v==='number'?v.toLocaleString('en-US'):String(v);
+document.querySelectorAll('[data-k]').forEach(el=>{const v=D[el.dataset.k];if(v===undefined||v===null)return;if(el.classList.contains('cu'))el.dataset.to=v;else el.textContent=fmt(v)});
+document.querySelectorAll('[data-kw]').forEach(el=>{const v=D[el.dataset.kw];if(typeof v==='number')el.style.setProperty('--w',v+'%')});
+document.querySelectorAll('[data-kx]').forEach(el=>{const v=D[el.dataset.kx];if(typeof v==='number')el.dataset.w=v});
+const G=s=>s.startsWith('http')?s:'https://grokipedia.com/page/'+s;
+document.getElementById('pagelist').innerHTML='<p style="font-size:12.5px;color:var(--mute);margin-bottom:6px">'+DATA.pages.length+' we matched to our requests and checked live'+(D.pages_checked_label?' on '+D.pages_checked_label:'')+'</p>'+DATA.pages.map(p=>`<div class="li"><a target="_blank" href="${G(p[1])}">${p[0]}</a><span>${p[2]} refs</span></div>`).join('');
+document.getElementById('reflist').innerHTML=DATA.pages.slice(0,5).map(p=>`<div class="li"><a target="_blank" href="${G(p[1])}">${p[0]}</a><span>${p[2]}</span></div><div class="bar" style="--w:${p[2]/(DATA.pages[0]?DATA.pages[0][2]:1)*100}%"></div>`).join('');
+document.getElementById('toplist').innerHTML=DATA.top.map(p=>`<div class="li"><a target="_blank" href="${G(p[1])}">${p[0]}</a><span>${p[2]} edits</span></div><div class="bar" style="--w:${p[2]/(DATA.top[0]?DATA.top[0][2]:1)*100}%"></div>`).join('');
+
+// chart
+(function(){const s=document.getElementById('growth'),W=1000,H=320,L=50,R=20,T=20,B=40,h=DATA.hist,n=h.length,max=Math.max(100,Math.ceil(Math.max(...h.map(d=>d[1]))/100)*100);
+ const x=i=>L+i*(W-L-R)/(n-1),y=v=>H-B-v/max*(H-T-B);let g='';
+ for(let v=0;v<=max;v+=max/4){g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#E3E8F3"/><text x="${L-10}" y="${y(v)+4}" fill="#56617F" font-size="12" text-anchor="end">${v}</text>`}
+ [...new Set([0,Math.round((n-1)/4),Math.round((n-1)/2),Math.round(3*(n-1)/4),n-1])].forEach(i=>g+=`<text x="${x(i)}" y="${H-12}" fill="#56617F" font-size="12" text-anchor="middle">${h[i][0]}</text>`);
+ const pts=k=>h.map((d,i)=>`${x(i)},${y(d[k])}`).join(' ');
+ g+=`<polygon class="areaf" points="${x(0)},${y(0)} ${pts(2)} ${x(n-1)},${y(0)}" fill="rgba(217,154,0,.12)"/>`;
+ g+=`<polyline class="draw" points="${pts(1)}" fill="none" stroke="#2F64D6" stroke-width="3.5" stroke-linejoin="round"/>`;
+ g+=`<polyline class="draw" points="${pts(2)}" fill="none" stroke="#B87A00" stroke-width="4" stroke-linejoin="round"/>`;
+ g+=`<circle class="areaf" cx="${x(n-1)}" cy="${y(h[n-1][2])}" r="7" fill="#B87A00"/><text class="areaf" x="${x(n-1)-40}" y="${y(h[n-1][2])+44}" fill="#B87A00" font-size="15" font-weight="800" text-anchor="end">${h[n-1][2]} approved</text>`;
+ g+=`<circle class="areaf" cx="${x(n-1)}" cy="${y(h[n-1][1])}" r="6" fill="#2F64D6"/><text class="areaf" x="${x(n-1)-12}" y="${y(h[n-1][1])-10}" fill="#2F64D6" font-size="15" font-weight="800" text-anchor="end">${h[n-1][1]} sent</text>`;
+ s.innerHTML=g;})();
+
+const q=new URLSearchParams(location.search);const STILL=q.has('still');if(STILL)document.body.classList.add('still');
+// count-ups
+function countUp(root){root.querySelectorAll('.cu').forEach(el=>{const to=+el.dataset.to,dec=+(el.dataset.dec||0),t0=performance.now(),d=STILL?1:1600;
+ (function f(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3),v=to*e;el.textContent=dec?v.toFixed(dec):Math.round(v).toLocaleString();if(k<1)requestAnimationFrame(f)})(t0)})}
+function ring(){document.getElementById('ringfg').style.strokeDashoffset=477.5*(1-D.g_approved/D.g_sent)}
+function bars(){const m=Math.max(D.o_cc_x||1,D.o_fi_x||1,D.o_fw_x||1);document.querySelectorAll('#xbars .fl').forEach(b=>b.style.width=(b.dataset.w/m*100)+'%')}
+// chain lighting
+let ci=0;setInterval(()=>{const c=document.querySelectorAll('#chain .chip');c.forEach((e,i)=>e.classList.toggle('lit',i===ci%c.length));ci++},700);
+
+// tabs
+function show(v){try{sessionStorage.setItem('dashTab',v)}catch(e){}document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===v));
+ document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));const s=document.getElementById('v-'+v);
+ s.querySelectorAll('.draw,.areaf').forEach(e=>{e.style.animation='none';e.offsetHeight;e.style.animation=''});
+ countUp(s);if(v==='g'){ring()}if(v==='o'){document.querySelectorAll('#xbars .fl').forEach(b=>b.style.width=0);setTimeout(bars,60)}}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>show(t.dataset.v));
+// outlet pills
+document.querySelectorAll('.pill').forEach(p=>p.onclick=()=>{const o=p.dataset.o;document.querySelectorAll('.pill').forEach(q=>q.classList.toggle('on',q===p));
+ document.querySelectorAll('.og').forEach(g=>{const on=g.dataset.o===o;g.classList.toggle('on',on);if(on)countUp(g)});
+ document.querySelectorAll('#xbars .brow').forEach(r=>r.classList.toggle('dim',o!=='all'&&r.dataset.o!==o))});
+// flip
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',e=>{if(e.target.closest('a'))return;c.classList.toggle('flip')}));
+
+// confetti
+const cv=document.getElementById('confetti'),cx=cv.getContext('2d');let parts=[];
+function burst(x,y){const cols=['#FFD166','#2EE6B8','#7FB0FF','#FF6B9A','#FF9F43','#B69CFF'];for(let i=0;i<160;i++){const a=Math.random()*Math.PI*2,s=4+Math.random()*9;
+ parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,r:4+Math.random()*5,c:cols[i%cols.length],rot:Math.random()*6,vr:(Math.random()-.5)*.4,life:120+Math.random()*60})}if(parts.length===160)tick()}
+function tick(){cv.width=innerWidth;cv.height=innerHeight;cx.clearRect(0,0,cv.width,cv.height);parts=parts.filter(p=>p.life-->0);
+ parts.forEach(p=>{p.vy+=.25;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle=p.c;cx.globalAlpha=Math.min(1,p.life/40);cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()});
+ if(parts.length)requestAnimationFrame(tick);else cx.clearRect(0,0,cv.width,cv.height)}
+const hero=document.getElementById('hero');
+hero.onclick=e=>burst(e.clientX,e.clientY);
+
+// start
+show(q.get('tab')||sessionStorage.getItem('dashTab')||'g');
+const AUTO=sessionStorage.getItem('dashAuto')==='1';sessionStorage.removeItem('dashAuto');
+const LOADED=Date.now();setInterval(()=>{if(Date.now()-LOADED<5*60*1000||document.querySelector('.card.flip'))return;sessionStorage.setItem('dashAuto','1');location.reload()},15000);
+if(!STILL&&!AUTO)setTimeout(()=>{const r=hero.getBoundingClientRect();burst(r.left+120,r.top+90)},1900);
+if(q.get('flip'))document.querySelectorAll('.view.on .card').forEach(c=>c.classList.add('flip'));
+if(q.get('o'))document.querySelector(`.pill[data-o="${q.get('o')}"]`).click();
+</script>
+</body></html>
