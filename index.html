@@ -113,6 +113,92 @@ footer{margin-top:34px;color:#7F89AD;font-size:13px;display:flex;justify-content
 .chip.lit{opacity:1}
 .lead{background:rgba(12,154,120,.08);border:1px solid rgba(12,154,120,.35)}
 footer{color:#56617F}
+
+
+.lead{cursor:pointer;position:relative}
+.lead.on,.lead:hover{transform:translateY(-4px);background:rgba(12,154,120,.18);box-shadow:0 10px 24px -14px rgba(12,154,120,.55)}
+.lead .mini{display:none;font-size:11px;color:var(--gold);font-weight:700;margin-top:4px}
+.lead.on .mini{display:block}
+
+.guide{background:linear-gradient(110deg,#FFF6DD,#E8F0FF);border:1px solid #F0D58A;border-radius:22px;padding:20px 22px;margin-bottom:18px}
+.guide h3{font:800 22px Poppins;margin:0 0 6px}
+.guide .gcap{color:var(--mute);font-size:14.5px;margin-bottom:14px}
+.gdots{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.gdot{width:12px;height:12px;border-radius:50%;background:#D0D7EA;cursor:pointer;transition:.25s;border:0;padding:0}
+.gdot.on{background:var(--gold);transform:scale(1.25);box-shadow:0 0 0 4px rgba(184,122,0,.2)}
+.gdot.done{background:var(--teal)}
+.gcard{background:#fff;border-radius:16px;padding:16px 18px;min-height:110px;border:1px solid #E1E6F2;animation:fade .35s}
+.gcard .step{font:800 12px Inter;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.gcard .title{font:800 20px Poppins;margin-bottom:6px}
+.gcard .body{color:var(--mute);font-size:15px;line-height:1.45}
+.gnav{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.gbtn{font:700 14px Inter;padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--blue);color:#fff;transition:.2s}
+.gbtn:hover{transform:translateY(-1px)}.gbtn.ghost{background:#EEF2FB;color:var(--ink)}
+.journey{background:var(--p);border:1px solid #E1E6F2;border-radius:20px;padding:18px;margin:16px 0;box-shadow:0 6px 22px -12px rgba(30,45,90,.25)}
+.journey h3{font:800 18px Poppins;margin:0 0 4px}
+.journey .jcap{color:var(--mute);font-size:13.5px;margin-bottom:12px}
+.jtrack{display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:center}
+.jstep{font-size:12.5px;font-weight:700;padding:8px 10px;border-radius:999px;background:#EEF2FB;color:var(--mute);opacity:.5;transition:.35s}
+.jstep.on{opacity:1;background:var(--amber);color:#fff;transform:scale(1.08)}
+.jstep.done{opacity:1;background:rgba(12,154,120,.15);color:var(--teal)}
+.jnote{text-align:center;margin-top:12px;font-weight:700;font-size:14.5px;min-height:22px;color:var(--ink)}
+.jtoggle{display:flex;gap:8px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+.tdetail{display:none;background:var(--p);border:1px solid #E1E6F2;border-radius:18px;padding:16px 18px;margin:14px 0 8px;box-shadow:0 6px 22px -12px rgba(30,45,90,.25);animation:fade .35s}
+.tdetail.on{display:block}
+.tdetail h4{font-size:18px;margin-bottom:6px}
+.tdetail p{color:var(--mute);font-size:14px;line-height:1.45;margin:4px 0}
+.tdetail .statrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.tdetail .stat{background:#EEF2FB;border-radius:12px;padding:8px 12px;font-weight:700;font-size:13.5px}
+.tdetail .stat b{display:block;font-size:20px;color:var(--blue)}
+.tpills{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 10px}
+.tpill{font:700 13px Inter;padding:8px 14px;border-radius:999px;border:1px solid #D0D7EA;color:var(--mute);background:#fff;cursor:pointer;transition:.2s}
+.tpill:hover{border-color:var(--blue);color:var(--ink)}.tpill.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tflow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin:8px 0 14px;min-height:48px}
+.tnode{font-size:13px;font-weight:700;padding:8px 12px;border-radius:12px;background:#DDE3F1;color:var(--ink);opacity:.45;transition:.3s}
+.tnode.lit{opacity:1;background:var(--teal);color:#06231B;transform:scale(1.06);box-shadow:0 0 0 3px rgba(12,154,120,.2)}
+.tnode.dim{opacity:.2}
+.tarr{color:var(--teal);font-weight:800}
+.tfacts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+@media(max-width:860px){.tfacts{grid-template-columns:1fr}}
+.tfact{background:var(--p);border:1px dashed #D0D7EA;border-radius:16px;padding:14px;cursor:pointer;transition:.25s;user-select:none}
+.tfact:hover{border-style:solid;transform:translateY(-2px);box-shadow:0 8px 20px -14px rgba(30,45,90,.4)}
+.tfact .q{font-weight:800;font-size:13px;color:var(--blue);letter-spacing:.5px;text-transform:uppercase}
+.tfact .a{display:none;margin-top:8px;font-size:14.5px;font-weight:600;line-height:1.4;color:var(--ink)}
+.tfact.open .a{display:block;animation:fade .3s}
+.tfact.open{border-color:var(--gold);border-style:solid}
+.chip.linkable{cursor:pointer}
+.chip.linkable:hover{opacity:1}
+.avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;display:block;border:3px solid var(--c,#3B6FE0);box-shadow:0 6px 18px -8px rgba(30,45,90,.45);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;background:#F7F3EA}
+.avatar:hover,.card:hover .avatar{transform:scale(1.08) rotate(-3deg);box-shadow:0 10px 26px -10px rgba(30,45,90,.55)}
+.avatar.sm{width:40px;height:40px;border-width:2px;display:inline-block;vertical-align:-10px;margin-right:8px}
+.face.front .avatar{margin-bottom:4px}
+.face.back .avatar.sm{margin-bottom:6px}
+.ohigh{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 18px}
+@media(max-width:860px){.ohigh{grid-template-columns:1fr}}
+.odonut{background:var(--p);border-radius:20px;padding:18px 20px;border:1px solid #E1E6F2;box-shadow:0 6px 22px -12px rgba(30,45,90,.25);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.odonut svg{width:160px;height:160px;flex:none;cursor:pointer;transition:transform .25s}
+.odonut svg:hover{transform:scale(1.04)}
+.odonut .dleg{flex:1;min-width:160px}
+.odonut .dleg .li{cursor:pointer;padding:6px 4px;border-radius:8px;transition:background .2s}
+.odonut .dleg .li:hover,.odonut .dleg .li.on{background:#EEF2FB}
+.odonut .dcenter{font:800 22px Poppins;fill:var(--ink)}
+.odonut .dsub{font:600 11px Inter;fill:var(--mute);letter-spacing:1px}
+.brow{position:relative;cursor:default}
+.brow .tip{position:absolute;left:50%;bottom:calc(100% + 6px);transform:translateX(-50%) translateY(4px);background:#13203F;color:#fff;font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s;z-index:5}
+.brow:hover .tip,.brow:focus-within .tip{opacity:1;transform:translateX(-50%) translateY(0)}
+.spotlight{background:linear-gradient(110deg,#FFF6DD,#E8F0FF);border:1px solid #F0D58A;border-radius:20px;padding:18px 22px;margin-bottom:16px;display:none;animation:fade .4s}
+.spotlight.on{display:block}
+.spotlight .row{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.spotlight .n{font:800 42px/1 Poppins;letter-spacing:-1px;color:var(--amber)}
+.spotlight .n small{font-size:18px;color:var(--mute);font-weight:700}
+.spotlight p{color:var(--mute);margin-top:4px;font-size:14px}
+.dyk{background:var(--p);border:1px dashed #F0D58A;border-radius:18px;padding:16px 18px;cursor:pointer;margin:18px 0 8px;transition:.25s;user-select:none}
+.dyk:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(184,122,0,.45);border-style:solid}
+.dyk .q{font-weight:800;color:var(--gold);font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.dyk .a{display:none;margin-top:10px;font-size:16px;font-weight:700;line-height:1.4}
+.dyk.open .a{display:block;animation:fade .35s}
+.dyk.open .q::after{content:" · tap to hide"}
+.dyk:not(.open) .q::after{content:" · tap to reveal"}
 .accts{grid-template-columns:repeat(2,1fr);margin-bottom:8px}
 @media(max-width:860px){.grid,.rules,.accts{grid-template-columns:1fr}.hero{flex-direction:column;text-align:center}header h1{font-size:40px}}
 </style></head><body>
@@ -149,11 +235,11 @@ footer{color:#56617F}
   <p class="cap">Headline numbers above are the combined total. Each account below.</p>
   <div class="grid accts">
     <div class="card" style="--c:var(--blue2)"><div class="inner">
-      <div class="face front"><div class="em">👤</div><div class="v"><span class="cu" data-k="a_lc_approved" data-to="417">0</span><small> of <span data-k="a_lc_sent">472</span></small></div>
+      <div class="face front"><img class="avatar" src="assets/account-a.jpg" alt="Account A" width="72" height="72"/><div class="v"><span class="cu" data-k="a_lc_approved" data-to="417">0</span><small> of <span data-k="a_lc_sent">472</span></small></div>
         <h4><span data-k="a_lc_name">Account A</span></h4>
         <p><span class="cu" data-k="a_lc_rate" data-to="88.3" data-dec="1">0</span>% approved · <span data-k="a_lc_created">30</span> of <span data-k="a_lc_requests">49</span> pages created</p>
         <div class="tap">TAP FOR DETAILS ↻</div></div>
-      <div class="face back"><h5><span data-k="a_lc_name">Account A</span></h5>
+      <div class="face back"><img class="avatar sm" src="assets/account-a.jpg" alt=""/><h5><span data-k="a_lc_name">Account A</span></h5>
         <div class="mean" style="margin:0 0 10px"><b>What this means.</b> The original account. Growth chart and pages-improved counts are from this account.</div>
         <div class="li">Edits sent<span data-k="a_lc_sent">472</span></div>
         <div class="li">Approved<span data-k="a_lc_approved">417</span></div>
@@ -164,11 +250,11 @@ footer{color:#56617F}
         <div class="li">As of<span data-k="a_lc_as_of">Nov 9, 08:55</span></div>
         </div></div></div>
     <div class="card" style="--c:var(--teal)"><div class="inner">
-      <div class="face front"><div class="em">📰</div><div class="v"><span class="cu" data-k="a_az_approved" data-to="303">0</span><small> of <span data-k="a_az_sent">333</span></small></div>
+      <div class="face front"><img class="avatar" src="assets/account-b.jpg" alt="Account B" width="72" height="72"/><div class="v"><span class="cu" data-k="a_az_approved" data-to="303">0</span><small> of <span data-k="a_az_sent">333</span></small></div>
         <h4><span data-k="a_az_name">Account B</span></h4>
         <p><span class="cu" data-k="a_az_rate" data-to="91.0" data-dec="1">0</span>% approved · <span data-k="a_az_created">10</span> of <span data-k="a_az_requests">20</span> pages created</p>
         <div class="tap">TAP FOR DETAILS ↻</div></div>
-      <div class="face back"><h5><span data-k="a_az_name">Account B</span></h5>
+      <div class="face back"><img class="avatar sm" src="assets/account-b.jpg" alt=""/><h5><span data-k="a_az_name">Account B</span></h5>
         <div class="mean" style="margin:0 0 10px"><b>What this means.</b> The second account. Counts come from its activity page reads.</div>
         <div class="li">Edits sent<span data-k="a_az_sent">333</span></div>
         <div class="li">Approved<span data-k="a_az_approved">303</span></div>
@@ -268,14 +354,31 @@ footer{color:#56617F}
     <button class="pill" data-o="fw">FutureWire</button>
   </div>
 
-  <div class="chart" style="margin-bottom:16px">
-    <div class="legend"><span>Public posts and replies on X</span></div>
-    <div class="bars" id="xbars">
-      <div class="brow" data-o="cc"><span>Crosscurrents</span><div class="tr"><div class="fl" style="background:var(--amber)" data-kx="o_cc_x" data-w="195"></div></div><b data-k="o_cc_x">195</b></div>
-      <div class="brow" data-o="fi"><span>The Fiscalist</span><div class="tr"><div class="fl" style="background:var(--teal)" data-kx="o_fi_x" data-w="121"></div></div><b data-k="o_fi_x">121</b></div>
-      <div class="brow" data-o="fw"><span>FutureWire</span><div class="tr"><div class="fl" style="background:var(--violet)" data-kx="o_fw_x" data-w="120"></div></div><b data-k="o_fw_x">120</b></div>
+  <div class="spotlight" id="spot-cc"><div class="row"><div><div class="n"><span class="cu" data-k="o_cc_x" data-to="216">0</span></div><p>X posts and replies</p></div><div><div class="n"><span class="cu" data-k="o_cc_tips" data-to="123">0</span></div><p>tip-offs · <span data-k="o_cc_tip_articles">37</span> articles</p></div><div><div class="n"><span class="cu" data-k="o_cc_replies" data-to="183">0</span> <small>/ <span data-k="o_cc_orig">28</span> orig</small></div><p>replies vs originals</p></div></div></div>
+  <div class="spotlight" id="spot-fi"><div class="row"><div><div class="n"><span class="cu" data-k="o_fi_x" data-to="136">0</span></div><p>public replies on X</p></div><div><div class="n"><span class="cu" data-k="o_fi_share" data-to="28.1" data-dec="1">0</span><small>%</small></div><p>of all X posts</p></div><div><p style="font-size:15px;color:var(--ink);font-weight:700">Logged <span data-k="o_fi_from">Sep 30</span> to <span data-k="o_fi_to">Nov 5</span></p><p>Finance, tech and markets</p></div></div></div>
+  <div class="spotlight" id="spot-fw"><div class="row"><div><div class="n"><span class="cu" data-k="o_fw_x" data-to="132">0</span></div><p>public replies on X</p></div><div><div class="n"><span class="cu" data-k="o_fw_share" data-to="27.3" data-dec="1">0</span><small>%</small></div><p>of all X posts</p></div><div><p style="font-size:15px;color:var(--ink);font-weight:700">Logged <span data-k="o_fw_from">Oct 4</span> to <span data-k="o_fw_to">Nov 5</span></p><p>Optimistic, future-facing</p></div></div></div>
+
+  <div class="ohigh">
+    <div class="chart" style="margin-bottom:0">
+      <div class="legend"><span>Public posts and replies on X · hover a bar</span></div>
+      <div class="bars" id="xbars">
+        <div class="brow" data-o="cc" tabindex="0"><span>Crosscurrents</span><div class="tr"><div class="fl" style="background:var(--amber)" data-kx="o_cc_x" data-w="195"></div></div><b data-k="o_cc_x">195</b><div class="tip"><span data-k="o_cc_x">216</span> posts · <span data-k="o_cc_share">44.6</span>% of total</div></div>
+        <div class="brow" data-o="fi" tabindex="0"><span>The Fiscalist</span><div class="tr"><div class="fl" style="background:var(--teal)" data-kx="o_fi_x" data-w="121"></div></div><b data-k="o_fi_x">121</b><div class="tip"><span data-k="o_fi_x">136</span> posts · <span data-k="o_fi_share">28.1</span>% of total</div></div>
+        <div class="brow" data-o="fw" tabindex="0"><span>FutureWire</span><div class="tr"><div class="fl" style="background:var(--violet)" data-kx="o_fw_x" data-w="120"></div></div><b data-k="o_fw_x">120</b><div class="tip"><span data-k="o_fw_x">132</span> posts · <span data-k="o_fw_share">27.3</span>% of total</div></div>
+      </div>
+    </div>
+    <div class="odonut" id="xdonut">
+      <svg viewBox="0 0 160 160" id="donutSvg" aria-label="X posts by outlet"></svg>
+      <div class="dleg">
+        <div class="legend" style="margin-bottom:8px"><span>Share of <span data-k="o_x_total">484</span> X posts · tap a slice</span></div>
+        <div class="li" data-slice="cc"><span><i style="background:var(--amber);width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:6px"></i>Crosscurrents</span><span><span data-k="o_cc_share">44.6</span>%</span></div>
+        <div class="li" data-slice="fi"><span><i style="background:var(--teal);width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:6px"></i>The Fiscalist</span><span><span data-k="o_fi_share">28.1</span>%</span></div>
+        <div class="li" data-slice="fw"><span><i style="background:var(--violet);width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:6px"></i>FutureWire</span><span><span data-k="o_fw_share">27.3</span>%</span></div>
+      </div>
     </div>
   </div>
+
+  <div class="dyk" id="dyk" role="button" tabindex="0"><div class="q">Did you know?</div><div class="a"><span data-k="o_dyk">123 tip-offs about 37 articles · 221 Substack comments across 107 writers</span><br><span style="font-weight:600;color:var(--mute);font-size:14px">That's about <span data-k="o_tips_per_article">3.3</span> tip-offs per tipped article. Crosscurrents replies are <span data-k="o_cc_reply_share">86.7</span>% of its X posts.</span></div></div>
 
   <div class="grid og on" data-o="all">
     <div class="card" style="--c:var(--amber)"><div class="inner">
@@ -293,6 +396,17 @@ footer{color:#56617F}
       <div class="face front"><div class="em">✉️</div><div class="v"><span class="cu" data-k="o_ss" data-to="205">0</span></div><h4>Substack comments</h4><p>Across <span data-k="o_ss_writers">104</span> different writers.</p><div class="tap">TAP FOR AN EXAMPLE ↻</div></div>
       <div class="face back"><h5>Where readers already talk</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> In front of readers of more than a hundred other writers.</div><p style="font-size:14px;line-height:1.45">Crosscurrents joins the comments on other writers' posts, like this one on China's AI outreach to the Global South.</p>
         <p style="margin-top:8px;font-size:13.5px"><a target="_blank" href="https://www.sinicapodcast.com/p/the-us-wants-global-south-countries/comment/376949098">See the comment →</a></p>
+        </div></div></div>
+    <div class="card" style="--c:var(--pink)"><div class="inner">
+      <div class="face front"><div class="em">📸</div><div class="v"><span class="cu" data-k="o_ig_total" data-to="76">0</span></div><h4>Instagram actions</h4><p>Likes, follows and comments.</p><div class="tap">TAP FOR THE SPLIT ↻</div></div>
+      <div class="face back"><h5>Instagram split</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Showing up where visual stories travel.</div>
+        <div class="li">Likes<span data-k="o_ig_like">49</span></div><div class="bar" id="igbar" style="--w:0%"></div>
+        <div class="li">Follows<span data-k="o_ig_follow">14</span></div>
+        <div class="li">Comments<span data-k="o_ig_comment">13</span></div>
+        </div></div></div>
+    <div class="card" style="--c:var(--gold)"><div class="inner">
+      <div class="face front"><div class="em">✨</div><div class="v"><span class="cu" data-k="o_tips_per_article" data-to="3.3" data-dec="1">0</span></div><h4>tip-offs per article</h4><p><span data-k="o_cc_tips">123</span> notes about <span data-k="o_cc_tip_articles">37</span> stories.</p><div class="tap">TAP FOR THE RULE ↻</div></div>
+      <div class="face back"><h5>Personal, not spam</h5><div class="mean" style="margin:0 0 10px"><b>What this means.</b> Real reach, zero spam.</div><p style="font-size:14px;line-height:1.45">Each tip-off goes to someone who recently posted about the same story. Nobody hears from us twice within 30 days.</p>
         </div></div></div>
   </div>
 
@@ -335,19 +449,122 @@ footer{color:#56617F}
 
 <!-- TEAM -->
 <section class="view" id="v-t">
-  <p class="cap">You talk to three leads. They handle the rest.</p>
-  <div class="org">
-    <div class="you">You</div><div class="vl"></div>
-    <div class="leads">
-      <div class="lead"><b>🎩 Butler</b><span>Main contact</span></div>
-      <div class="lead"><b>📚 Grokmeister</b><span>Runs Grokipedia</span></div>
-      <div class="lead"><b>🔧 Fixer</b><span>Fixes problems</span></div>
-    </div><div class="vl"></div>
-    <div class="lab">Specialists pass the work along</div>
-    <div class="chain" id="chain">
-      <span class="chip">Find</span><span class="chev">›</span><span class="chip">Match</span><span class="chev">›</span><span class="chip">Edit</span><span class="chev">›</span><span class="chip">Submit</span><span class="chev">›</span><span class="chip">Research</span><span class="chev">›</span><span class="chip">Record</span><span class="chev">›</span><span class="chip">Track</span>
+  <p class="cap">A short tour of the whole project. Tap through. No homework.</p>
+
+  <div class="guide" id="guide">
+    <h3>Start here</h3>
+    <p class="gcap">One idea at a time. Progress dots mark where you are.</p>
+    <div class="gdots" id="gdots" role="tablist"></div>
+    <div class="gcard" id="gcard"></div>
+    <div class="gnav">
+      <button type="button" class="gbtn ghost" id="gprev">Back</button>
+      <button type="button" class="gbtn" id="gnext">Next</button>
     </div>
   </div>
+
+  <div class="journey" id="journey">
+    <h3>Follow one piece of work</h3>
+    <p class="jcap">Watch a path light up from start to finish. Switch between an encyclopedia edit and an outreach tip-off.</p>
+    <div class="jtoggle">
+      <button type="button" class="tpill on" data-j="edit">One edit</button>
+      <button type="button" class="tpill" data-j="tip">One tip-off</button>
+    </div>
+    <div class="jtrack" id="jtrack"></div>
+    <div class="jnote" id="jnote"></div>
+  </div>
+
+
+  <div class="guide" id="oguide" style="background:linear-gradient(110deg,#FFF0E4,#F3EEFF);border-color:#F0C9A0">
+    <h3>Outreach, start here</h3>
+    <p class="gcap">Same length as the encyclopedia tour. Tap through the three brands and how a story reaches readers.</p>
+    <div class="gdots" id="ogdots" role="tablist"></div>
+    <div class="gcard" id="ogcard"></div>
+    <div class="gnav">
+      <button type="button" class="gbtn ghost" id="ogprev">Back</button>
+      <button type="button" class="gbtn" id="ognext" style="background:var(--amber)">Next</button>
+    </div>
+  </div>
+
+  <div class="journey" id="ojourney">
+    <h3>Follow one article to its readers</h3>
+    <p class="jcap">Publish → pick people → tip-offs, X, Substack, Instagram. Live numbers sit under each step.</p>
+    <div class="jtoggle">
+      <button type="button" class="tpill on" data-oj="path">Full path</button>
+      <button type="button" class="tpill" data-oj="brands">By brand</button>
+    </div>
+    <div class="jtrack" id="ojtrack"></div>
+    <div class="jnote" id="ojnote"></div>
+    <div class="statrow" id="ojstats" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px"></div>
+  </div>
+
+  <div class="ohigh" style="margin-bottom:16px">
+    <div class="card" style="--c:var(--amber);height:auto;perspective:none" data-brand="cc"><div class="inner" style="transform:none">
+      <div class="face front" style="position:relative;height:auto;transform:none;backface-visibility:visible">
+        <div class="em">🌊</div><h4>Crosscurrents</h4>
+        <p>News and tip-offs. X, Substack, Instagram.</p>
+        <div class="li">X posts<span data-k="o_cc_x">216</span></div>
+        <div class="li">Tip-offs<span data-k="o_cc_tips">123</span></div>
+        <div class="li">Substack<span data-k="o_ss">221</span></div>
+        <div class="li">Instagram<span data-k="o_ig_total">76</span></div>
+        <div class="tap" style="position:static;margin-top:10px">TAP BRAND FILTER ↻</div>
+      </div>
+    </div></div>
+    <div class="card" style="--c:var(--teal);height:auto;perspective:none" data-brand="fi"><div class="inner" style="transform:none">
+      <div class="face front" style="position:relative;height:auto;transform:none;backface-visibility:visible">
+        <div class="em">💹</div><h4>The Fiscalist</h4>
+        <p>Finance, tech and markets. Sharp and numbers-first.</p>
+        <div class="li">X replies<span data-k="o_fi_x">136</span></div>
+        <div class="li">Share of all X<span><span data-k="o_fi_share">28.1</span>%</span></div>
+        <div class="li">Logged<span><span data-k="o_fi_from">Sep 30</span> to <span data-k="o_fi_to">Nov 5</span></span></div>
+        <div class="tap" style="position:static;margin-top:10px">TAP BRAND FILTER ↻</div>
+      </div>
+    </div></div>
+    <div class="card" style="--c:var(--violet);height:auto;perspective:none" data-brand="fw"><div class="inner" style="transform:none">
+      <div class="face front" style="position:relative;height:auto;transform:none;backface-visibility:visible">
+        <div class="em">🚀</div><h4>FutureWire</h4>
+        <p>Optimistic, future-facing stories. West, India, Israel.</p>
+        <div class="li">X replies<span data-k="o_fw_x">132</span></div>
+        <div class="li">Share of all X<span><span data-k="o_fw_share">27.3</span>%</span></div>
+        <div class="li">Logged<span><span data-k="o_fw_from">Oct 4</span> to <span data-k="o_fw_to">Nov 5</span></span></div>
+        <div class="tap" style="position:static;margin-top:10px">TAP BRAND FILTER ↻</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="tpills" id="tfilters" role="tablist">
+    <button class="tpill on" data-f="all">All work</button>
+    <button class="tpill" data-f="g">Encyclopedia</button>
+    <button class="tpill" data-f="cc">Crosscurrents</button>
+    <button class="tpill" data-f="fi">The Fiscalist</button>
+    <button class="tpill" data-f="fw">FutureWire</button>
+  </div>
+
+  <div class="org">
+    <div class="you">You</div><div class="vl"></div>
+    <div class="leads" id="leads">
+      <div class="lead" data-lead="butler" tabindex="0" role="button"><b>🎩 Butler</b><span>Main contact</span><div class="mini">tap for details</div></div>
+      <div class="lead" data-lead="gm" tabindex="0" role="button"><b>📚 Grokmeister</b><span>Runs the encyclopedia lane</span><div class="mini">tap for details</div></div>
+      <div class="lead" data-lead="fixer" tabindex="0" role="button"><b>🔧 Fixer</b><span>Fixes problems</span><div class="mini">tap for details</div></div>
+    </div>
+    <div class="tdetail" id="tdetail"></div>
+    <div class="vl"></div>
+    <div class="lab">How work moves</div>
+    <div class="tflow" id="tflow" aria-live="polite"></div>
+    <div class="lab" style="margin-top:8px">Specialist steps</div>
+    <div class="chain" id="chain">
+      <span class="chip linkable" data-step="Find">Find</span><span class="chev">›</span><span class="chip linkable" data-step="Match">Match</span><span class="chev">›</span><span class="chip linkable" data-step="Edit">Edit</span><span class="chev">›</span><span class="chip linkable" data-step="Submit">Submit</span><span class="chev">›</span><span class="chip linkable" data-step="Research">Research</span><span class="chev">›</span><span class="chip linkable" data-step="Record">Record</span><span class="chev">›</span><span class="chip linkable" data-step="Track">Track</span>
+    </div>
+  </div>
+
+  <h2>Peek behind a door</h2>
+  <p class="cap">Tap any card. Real numbers from this dashboard.</p>
+  <div class="tfacts">
+    <div class="tfact" tabindex="0" role="button"><div class="q">Why the encyclopedia?</div><div class="a">Better pages feed the content that future learning tools draw on. Better sources, better answers.</div></div>
+    <div class="tfact" tabindex="0" role="button"><div class="q">Two accounts</div><div class="a">Account A and Account B together: <span data-k="g_approved">720</span> of <span data-k="g_sent">805</span> edits approved (<span data-k="g_rate">89.4</span>%). <span data-k="g_created">40</span> new pages from <span data-k="g_requests">69</span> requests.</div></div>
+    <div class="tfact" tabindex="0" role="button"><div class="q">Outreach pulse</div><div class="a"><span data-k="o_x_total">484</span> X posts across three outlets, <span data-k="o_cc_tips">123</span> tip-offs, and <span data-k="o_ss">221</span> Substack comments. Personal notes, not spam.</div></div>
+  </div>
+
+  <h2>How we work together</h2>
   <div class="rules">
     <div class="card" style="--c:var(--teal)"><div class="inner">
       <div class="face front"><div class="em">📦</div><h4>One bundled ask</h4><p>Questions come up as one request, not twenty.</p><div class="tap">TAP ↻</div></div>
@@ -364,7 +581,7 @@ footer{color:#56617F}
 <footer><span>Every number comes from project records and live page checks. Updated <span data-k="updated_label">Nov 3, 15:30</span> Israel time.</span><span>Built as a team, with you in charge.</span></footer>
 </div>
 
-<!--DATA-START--><script id="dash-data" type="application/json">{"g_sent":805,"g_approved":720,"g_in_review":0,"g_rate":89.4,"g_review_line":"Zero still waiting for review.","hist":[["Oct 5",26,9],["Oct 6",68,46],["Oct 7",69,52],["Oct 8",93,75],["Oct 9",98,79],["Oct 12",112,91],["Oct 13",112,91],["Oct 14",121,100],["Oct 16",125,104],["Oct 19",137,113],["Oct 20",148,122],["Oct 21",171,140],["Oct 22",192,158],["Oct 23",215,181],["Oct 26",216,182],["Oct 27",241,206],["Oct 28",241,206],["Oct 29",306,267],["Oct 30",319,279],["Nov 2",332,292],["Nov 3",375,328],["Nov 4",461,406],["Nov 5",468,413],["Nov 9",472,417]],"r0_lab":"Oct 5, first check","r0_txt":"9 of 26","r0_w":34.6,"r1_lab":"Oct 14","r1_txt":"100 of 121","r1_w":82.6,"r2_lab":"Nov 9, latest","r2_txt":"417 of 472","r2_w":88.3,"g_requests":69,"g_created":40,"g_pages_improved":278,"top":[["Muslim Brotherhood","https://grokipedia.com/page/Muslim_Brotherhood",14],["Hamas","https://grokipedia.com/page/Hamas",13],["Roy Altman","https://grokipedia.com/page/Roy_Altman",12],["Council on American–Islamic Relations","https://grokipedia.com/page/Council_on_American%E2%80%93Islamic_Relations",9],["Popular Front for the Liberation of Palestine","https://grokipedia.com/page/Popular_Front_for_the_Liberation_of_Palestine",8],["Al-Awda, The Palestine Right to Return Coalition","https://grokipedia.com/page/Al-Awda_The_Palestine_Right_to_Return_Coalition",7]],"g_sov_approved":4,"map_articles":1020,"map_matched":956,"map_missing":36,"pages":[["Tom Fletcher (diplomat)","Tom_Fletcher_(diplomat)",114],["Solicitors Disciplinary Tribunal","Solicitors_Disciplinary_Tribunal",105],["Mark Goldfeder","Mark_Goldfeder",104],["Karl Skorecki","Karl_Skorecki",97],["Israeli Sociological Society","Israeli_Sociological_Society",91],["Resist, Inc.","Resist_Inc.",86],["No Azure for Apartheid","No_Azure_for_Apartheid",86],["Dimitri Lascaris","Dimitri_Lascaris",86],["Charlotte Kates","Charlotte_Kates",84],["Al-Awda, The Palestine Right to Return Coalition","Al-Awda_The_Palestine_Right_to_Return_Coalition",80],["David Collier","David_Collier_(journalist)",78],["Ahmed Alnaouq","Ahmed_Alnaouq",77],["Global March to Gaza","2025_Global_March_to_Gaza",72],["Ben M. Freeman","Ben_M._Freeman",71],["United Liberation Front for Palestine","United_Liberation_Front_for_Palestine",69],["Jaldia Abubakra","Jaldia_Abubakra",66],["Saif Abukeshek","Saif_Abukeshek",57],["Wisam Rafeedie","Wisam_Rafeedie",50]],"top_ref_title":"Tom Fletcher (diplomat)","top_ref_n":114,"pages_checked_label":"Nov 9","o_cc_x":216,"o_cc_replies":183,"o_cc_orig":28,"o_cc_from":"Sep 27","o_cc_to":"Nov 5","o_cc_tips":123,"o_cc_tip_articles":37,"o_ss":221,"o_ss_writers":107,"o_ig_like":49,"o_ig_follow":14,"o_ig_comment":13,"o_ig_total":76,"o_fi_x":136,"o_fi_from":"Sep 30","o_fi_to":"Nov 5","o_fw_x":132,"o_fw_from":"Oct 4","o_fw_to":"Nov 5","o_x_total":484,"w_cc":100.0,"w_fi":63.0,"w_fw":61.1,"updated_at":"2026-11-09T11:45+02:00","updated_label":"Nov 9, 11:45","a_lc_name":"Account A","a_lc_sent":472,"a_lc_approved":417,"a_lc_rejected":55,"a_lc_rate":88.3,"a_lc_requests":49,"a_lc_created":30,"a_lc_as_of":"Nov 9, 08:55","a_lc_as_of_iso":"2026-11-09T08:55:00+02:00","a_az_name":"Account B","a_az_sent":333,"a_az_approved":303,"a_az_rejected":30,"a_az_rate":91.0,"a_az_requests":20,"a_az_created":10,"a_az_as_of":"Nov 9, 11:04","a_az_as_of_iso":"2026-11-09T11:04:00+02:00","a_az_rate_shown":"91%","g_rejected":85,"g_accounts":2,"g_hero_sub":"edits approved across both accounts","g_pages_improved_note":"Account A only","g_hist_note":"Account A only"}</script><!--DATA-END-->
+<!--DATA-START--><script id="dash-data" type="application/json">{"g_sent":805,"g_approved":720,"g_in_review":0,"g_rate":89.4,"g_review_line":"Zero still waiting for review.","hist":[["Oct 5",26,9],["Oct 6",68,46],["Oct 7",69,52],["Oct 8",93,75],["Oct 9",98,79],["Oct 12",112,91],["Oct 13",112,91],["Oct 14",121,100],["Oct 16",125,104],["Oct 19",137,113],["Oct 20",148,122],["Oct 21",171,140],["Oct 22",192,158],["Oct 23",215,181],["Oct 26",216,182],["Oct 27",241,206],["Oct 28",241,206],["Oct 29",306,267],["Oct 30",319,279],["Nov 2",332,292],["Nov 3",375,328],["Nov 4",461,406],["Nov 5",468,413],["Nov 9",472,417]],"r0_lab":"Oct 5, first check","r0_txt":"9 of 26","r0_w":34.6,"r1_lab":"Oct 14","r1_txt":"100 of 121","r1_w":82.6,"r2_lab":"Nov 9, latest","r2_txt":"417 of 472","r2_w":88.3,"g_requests":69,"g_created":40,"g_pages_improved":278,"top":[["Muslim Brotherhood","https://grokipedia.com/page/Muslim_Brotherhood",14],["Hamas","https://grokipedia.com/page/Hamas",13],["Roy Altman","https://grokipedia.com/page/Roy_Altman",12],["Council on American–Islamic Relations","https://grokipedia.com/page/Council_on_American%E2%80%93Islamic_Relations",9],["Popular Front for the Liberation of Palestine","https://grokipedia.com/page/Popular_Front_for_the_Liberation_of_Palestine",8],["Al-Awda, The Palestine Right to Return Coalition","https://grokipedia.com/page/Al-Awda_The_Palestine_Right_to_Return_Coalition",7]],"g_sov_approved":4,"map_articles":1020,"map_matched":956,"map_missing":36,"pages":[["Tom Fletcher (diplomat)","Tom_Fletcher_(diplomat)",114],["Solicitors Disciplinary Tribunal","Solicitors_Disciplinary_Tribunal",105],["Mark Goldfeder","Mark_Goldfeder",104],["Karl Skorecki","Karl_Skorecki",97],["Israeli Sociological Society","Israeli_Sociological_Society",91],["Resist, Inc.","Resist_Inc.",86],["No Azure for Apartheid","No_Azure_for_Apartheid",86],["Dimitri Lascaris","Dimitri_Lascaris",86],["Charlotte Kates","Charlotte_Kates",84],["Al-Awda, The Palestine Right to Return Coalition","Al-Awda_The_Palestine_Right_to_Return_Coalition",80],["David Collier","David_Collier_(journalist)",78],["Ahmed Alnaouq","Ahmed_Alnaouq",77],["Global March to Gaza","2025_Global_March_to_Gaza",72],["Ben M. Freeman","Ben_M._Freeman",71],["United Liberation Front for Palestine","United_Liberation_Front_for_Palestine",69],["Jaldia Abubakra","Jaldia_Abubakra",66],["Saif Abukeshek","Saif_Abukeshek",57],["Wisam Rafeedie","Wisam_Rafeedie",50]],"top_ref_title":"Tom Fletcher (diplomat)","top_ref_n":114,"pages_checked_label":"Nov 9","o_cc_x":216,"o_cc_replies":183,"o_cc_orig":28,"o_cc_from":"Sep 27","o_cc_to":"Nov 5","o_cc_tips":123,"o_cc_tip_articles":37,"o_ss":221,"o_ss_writers":107,"o_ig_like":49,"o_ig_follow":14,"o_ig_comment":13,"o_ig_total":76,"o_fi_x":136,"o_fi_from":"Sep 30","o_fi_to":"Nov 5","o_fw_x":132,"o_fw_from":"Oct 4","o_fw_to":"Nov 5","o_x_total":484,"w_cc":100.0,"w_fi":63.0,"w_fw":61.1,"updated_at":"2026-11-09T12:00+02:00","updated_label":"Nov 9, 12:00","a_lc_name":"Account A","a_lc_sent":472,"a_lc_approved":417,"a_lc_rejected":55,"a_lc_rate":88.3,"a_lc_requests":49,"a_lc_created":30,"a_lc_as_of":"Nov 9, 08:55","a_lc_as_of_iso":"2026-11-09T08:55:00+02:00","a_az_name":"Account B","a_az_sent":333,"a_az_approved":303,"a_az_rejected":30,"a_az_rate":91.0,"a_az_requests":20,"a_az_created":10,"a_az_as_of":"Nov 9, 11:04","a_az_as_of_iso":"2026-11-09T11:04:00+02:00","a_az_rate_shown":"91%","g_rejected":85,"g_accounts":2,"g_hero_sub":"edits approved across both accounts","g_pages_improved_note":"Account A only","g_hist_note":"Account A only","o_cc_share":44.6,"o_fi_share":28.1,"o_fw_share":27.3,"o_tips_per_article":3.3,"o_cc_reply_share":86.7,"o_cc_orig_share":13.3,"o_dyk":"123 tip-offs about 37 articles · 221 Substack comments across 107 writers"}</script><!--DATA-END-->
 <script>
 const D=JSON.parse(document.getElementById('dash-data').textContent);const DATA={pages:D.pages,top:D.top,hist:D.hist};
 
@@ -404,12 +621,54 @@ let ci=0;setInterval(()=>{const c=document.querySelectorAll('#chain .chip');c.fo
 function show(v){try{sessionStorage.setItem('dashTab',v)}catch(e){}document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===v));
  document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));const s=document.getElementById('v-'+v);
  s.querySelectorAll('.draw,.areaf').forEach(e=>{e.style.animation='none';e.offsetHeight;e.style.animation=''});
- countUp(s);if(v==='g'){ring()}if(v==='o'){document.querySelectorAll('#xbars .fl').forEach(b=>b.style.width=0);setTimeout(bars,60)}}
+ countUp(s);if(v==='g'){ring()}if(v==='o'){document.querySelectorAll('#xbars .fl').forEach(b=>b.style.width=0);setTimeout(bars,60);drawDonut(null);const on=document.querySelector('.pill.on');if(on)setOutlet(on.dataset.o)}if(v==='t'){const on=document.querySelector('#tfilters .tpill.on');setTeamFilter(on?on.dataset.f:'all');renderGuide();playJourney();renderOGuide();playOJourney()}}
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>show(t.dataset.v));
-// outlet pills
-document.querySelectorAll('.pill').forEach(p=>p.onclick=()=>{const o=p.dataset.o;document.querySelectorAll('.pill').forEach(q=>q.classList.toggle('on',q===p));
+// outlet pills + brand spotlight
+function setOutlet(o){
+ document.querySelectorAll('.pill').forEach(q=>q.classList.toggle('on',q.dataset.o===o));
  document.querySelectorAll('.og').forEach(g=>{const on=g.dataset.o===o;g.classList.toggle('on',on);if(on)countUp(g)});
- document.querySelectorAll('#xbars .brow').forEach(r=>r.classList.toggle('dim',o!=='all'&&r.dataset.o!==o))});
+ document.querySelectorAll('#xbars .brow').forEach(r=>r.classList.toggle('dim',o!=='all'&&r.dataset.o!==o));
+ document.querySelectorAll('.spotlight').forEach(s=>s.classList.toggle('on',s.id==='spot-'+o));
+ document.querySelectorAll('#xdonut .dleg .li').forEach(li=>li.classList.toggle('on',li.dataset.slice===o));
+ const spot=document.getElementById('spot-'+o); if(spot) countUp(spot);
+ drawDonut(o==='all'?null:o);
+}
+document.querySelectorAll('.pill').forEach(p=>p.onclick=()=>setOutlet(p.dataset.o));
+
+// X donut (verified shares)
+function drawDonut(focus){
+ const svg=document.getElementById('donutSvg'); if(!svg) return;
+ const parts=[{k:'cc',v:D.o_cc_x,c:'#D96C0A',share:D.o_cc_share},{k:'fi',v:D.o_fi_x,c:'#0C9A78',share:D.o_fi_share},{k:'fw',v:D.o_fw_x,c:'#6E4FD8',share:D.o_fw_share}];
+ const tot=parts.reduce((a,p)=>a+p.v,0)||1; const R=58,C=80, stroke=22;
+ let a=-Math.PI/2, arcs='';
+ parts.forEach(p=>{
+  const ang=2*Math.PI*(p.v/tot), x1=C+R*Math.cos(a), y1=C+R*Math.sin(a), a2=a+ang, x2=C+R*Math.cos(a2), y2=C+R*Math.sin(a2);
+  const large=ang>Math.PI?1:0; const op=(!focus||focus===p.k)?1:0.28;
+  arcs+=`<path data-slice="${p.k}" d="M ${x1} ${y1} A ${R} ${R} 0 ${large} 1 ${x2} ${y2}" fill="none" stroke="${p.c}" stroke-width="${stroke}" stroke-linecap="butt" opacity="${op}" style="cursor:pointer;transition:opacity .25s"/>`;
+  a=a2;
+ });
+ const label=focus?parts.find(p=>p.k===focus):null;
+ const big=label?label.share:D.o_x_total; const sub=label?label.k.toUpperCase():'TOTAL';
+ arcs+=`<text class="dcenter" x="80" y="78" text-anchor="middle">${typeof big==='number'&&big%1?big.toFixed(1):big}${label?'%':''}</text>`;
+ arcs+=`<text class="dsub" x="80" y="96" text-anchor="middle">${sub}</text>`;
+ svg.innerHTML=arcs;
+ svg.querySelectorAll('path[data-slice]').forEach(path=>path.addEventListener('click',e=>{e.stopPropagation();setOutlet(path.dataset.slice)}));
+}
+document.querySelectorAll('#xdonut .dleg .li').forEach(li=>li.onclick=()=>setOutlet(li.dataset.slice));
+
+// did you know
+const dyk=document.getElementById('dyk');
+if(dyk){const tog=()=>dyk.classList.toggle('open'); dyk.onclick=tog; dyk.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}};}
+
+// IG likes bar width vs total actions
+(function(){const el=document.getElementById('igbar'); if(el&&D.o_ig_total) el.style.setProperty('--w', (D.o_ig_like/D.o_ig_total*100)+'%')})();
+
+// count-up when cards scroll into view (outreach)
+if('IntersectionObserver' in window){
+ const io=new IntersectionObserver(ents=>{ents.forEach(en=>{if(en.isIntersecting){countUp(en.target); io.unobserve(en.target)}})},{threshold:.35});
+ document.querySelectorAll('#v-o .card, #v-o .spotlight, #v-o .odonut').forEach(el=>io.observe(el));
+}
+
 // flip
 document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',e=>{if(e.target.closest('a'))return;c.classList.toggle('flip')}));
 
@@ -422,6 +681,172 @@ function tick(){cv.width=innerWidth;cv.height=innerHeight;cx.clearRect(0,0,cv.wi
  if(parts.length)requestAnimationFrame(tick);else cx.clearRect(0,0,cv.width,cv.height)}
 const hero=document.getElementById('hero');
 hero.onclick=e=>burst(e.clientX,e.clientY);
+
+
+
+// Team page interactivity + guided explainer
+const GUIDE=[
+ {t:'What this is',b:'Two projects, one team. We improve encyclopedia pages that people and learning tools draw on, and we help real reporting reach the people who care.'},
+ {t:'Why the encyclopedia',b:'Better sourced pages mean better answers later. The work feeds content that future learning tools draw on.'},
+ {t:'How an edit is born',b:'Find a gap. Match a source. Check every fact. A person approves. Then Grokipedia\'s own reviewers decide.'},
+ {t:'Two accounts',b:'Account A and Account B send edits. Combined: '+D.g_approved+' of '+D.g_sent+' approved ('+D.g_rate+'%). '+D.g_created+' new pages from '+D.g_requests+' requests.'},
+ {t:'Outreach gets equal time',b:'The next cards are the full outreach tour. Preview: '+D.o_x_total+' X posts, '+D.o_cc_tips+' tip-offs, '+D.o_ss+' Substack comments across three brands.'},
+ {t:'Who you talk to',b:'Butler is your main contact. Grokmeister runs the encyclopedia lane. Fixer unsticks problems. Specialists pass the work along.'},
+ {t:'You\'re in charge',b:'One bundled ask. Approve once. Short handoffs. Say yes to any lead and the whole team knows.'}
+];
+let gi=0;
+function renderGuide(){
+ const card=document.getElementById('gcard'); const dots=document.getElementById('gdots'); if(!card||!dots) return;
+ dots.innerHTML=GUIDE.map((_,i)=>`<button type="button" class="gdot${i===gi?' on':''}${i<gi?' done':''}" data-i="${i}" aria-label="Step ${i+1}"></button>`).join('');
+ const s=GUIDE[gi];
+ card.innerHTML=`<div class="step">Step ${gi+1} of ${GUIDE.length}</div><div class="title">${s.t}</div><div class="body">${s.b}</div>`;
+ dots.querySelectorAll('.gdot').forEach(d=>d.onclick=()=>{gi=+d.dataset.i;renderGuide()});
+ document.getElementById('gprev').disabled=gi===0;
+ document.getElementById('gnext').textContent=gi===GUIDE.length-1?'Done':'Next';
+}
+document.getElementById('gprev')?.addEventListener('click',()=>{if(gi>0){gi--;renderGuide()}});
+document.getElementById('gnext')?.addEventListener('click',()=>{if(gi<GUIDE.length-1){gi++;renderGuide()}});
+renderGuide();
+
+const JOURNEYS={
+ edit:{label:'One encyclopedia edit',steps:['Find a gap','Match a source','Check the facts','You approve','Submit','Reviewers decide','Record the result'],notes:['Spot a missing or thin page.','Pair a trusted source to the right page.','Every claim gets a citation.','A person says go before anything leaves.','Sent to Grokipedia\'s reviewers.','Approved, rejected, or asked to rework.','Logged. Pages get rechecked later.']},
+ tip:{label:'One outreach tip-off',steps:['Article goes live','Pick who cares','Personal note','30-day rule','They read it','Maybe share','We log it'],notes:['A new story publishes.','Find people already talking about it.','One short note in the outlet\'s own voice.','Nobody hears from us twice within 30 days.','It lands where the conversation already is.','Reach without spam.','Counted in the outreach totals you see here.']}
+};
+let jKind='edit', jIdx=0, jTimer=null;
+function renderJourney(){
+ const J=JOURNEYS[jKind]; const track=document.getElementById('jtrack'); const note=document.getElementById('jnote');
+ if(!track) return;
+ track.innerHTML=J.steps.map((s,i)=>`<span class="jstep${i===jIdx?' on':''}${i<jIdx?' done':''}">${s}</span>${i<J.steps.length-1?'<span class="tarr">›</span>':''}`).join('');
+ if(note) note.textContent=J.notes[jIdx]||'';
+}
+function playJourney(){
+ clearInterval(jTimer); jIdx=0; renderJourney();
+ jTimer=setInterval(()=>{jIdx++; if(jIdx>=JOURNEYS[jKind].steps.length){jIdx=0} renderJourney()},1600);
+}
+document.querySelectorAll('#journey .jtoggle .tpill').forEach(p=>p.onclick=()=>{
+ document.querySelectorAll('#journey .jtoggle .tpill').forEach(q=>q.classList.toggle('on',q===p));
+ jKind=p.dataset.j; playJourney();
+});
+playJourney();
+
+
+const OGUIDE=[
+ {t:'Three brands, three voices',b:'Crosscurrents, The Fiscalist, and FutureWire each speak like themselves. Never one template for all.'},
+ {t:'Crosscurrents',b:'News and tip-offs. '+D.o_cc_x+' X posts, '+D.o_cc_tips+' personal tip-offs about '+D.o_cc_tip_articles+' articles, plus Substack and Instagram.'},
+ {t:'The Fiscalist',b:'Finance, tech and markets. '+D.o_fi_x+' public X replies ('+D.o_fi_share+'% of all X). Logged from '+D.o_fi_from+' to '+D.o_fi_to+'.'},
+ {t:'FutureWire',b:'Optimistic, future-facing stories. '+D.o_fw_x+' public X replies ('+D.o_fw_share+'% of all X). Logged from '+D.o_fw_from+' to '+D.o_fw_to+'.'},
+ {t:'From publish to people',b:'A new article goes live. We pick people already talking about it. Then tip-offs, X replies, Substack comments, and Instagram posts.'},
+ {t:'The 30-day rule',b:'Nobody hears from us twice within 30 days. '+D.o_cc_tips+' tip-offs, about '+D.o_tips_per_article+' per tipped article.'},
+ {t:'Where the numbers live',b:'All outlets together: '+D.o_x_total+' X posts, '+D.o_ss+' Substack comments across '+D.o_ss_writers+' writers, '+D.o_ig_total+' Instagram actions.'}
+];
+let ogi=0;
+function renderOGuide(){
+ const card=document.getElementById('ogcard'); const dots=document.getElementById('ogdots'); if(!card||!dots) return;
+ dots.innerHTML=OGUIDE.map((_,i)=>`<button type="button" class="gdot${i===ogi?' on':''}${i<ogi?' done':''}" data-i="${i}" aria-label="Outreach step ${i+1}"></button>`).join('');
+ const s=OGUIDE[ogi];
+ card.innerHTML=`<div class="step">Outreach ${ogi+1} of ${OGUIDE.length}</div><div class="title">${s.t}</div><div class="body">${s.b}</div>`;
+ dots.querySelectorAll('.gdot').forEach(d=>d.onclick=()=>{ogi=+d.dataset.i;renderOGuide()});
+ const prev=document.getElementById('ogprev'); const next=document.getElementById('ognext');
+ if(prev) prev.disabled=ogi===0;
+ if(next) next.textContent=ogi===OGUIDE.length-1?'Done':'Next';
+}
+document.getElementById('ogprev')?.addEventListener('click',()=>{if(ogi>0){ogi--;renderOGuide()}});
+document.getElementById('ognext')?.addEventListener('click',()=>{if(ogi<OGUIDE.length-1){ogi++;renderOGuide()}});
+renderOGuide();
+
+const OPATHS={
+ path:{steps:['Publish','Pick people','Tip-offs','X replies','Substack','Instagram','Logged'],
+  notes:['A new article goes live.','Find people already talking about it.','Personal notes: '+D.o_cc_tips+' sent about '+D.o_cc_tip_articles+' articles.','Public conversation: '+D.o_x_total+' posts across three outlets.','Comments where readers already gather: '+D.o_ss+' across '+D.o_ss_writers+' writers.','Visual reach: '+D.o_ig_total+' likes, follows and comments.','Every step counted on the Outreach tab.'],
+  stats:[
+    ()=>[{l:'Articles tipped',v:D.o_cc_tip_articles}],
+    ()=>[{l:'Tip-offs',v:D.o_cc_tips}],
+    ()=>[{l:'Tip-offs',v:D.o_cc_tips},{l:'Per article',v:D.o_tips_per_article}],
+    ()=>[{l:'X total',v:D.o_x_total},{l:'CC / FI / FW',v:D.o_cc_x+' / '+D.o_fi_x+' / '+D.o_fw_x}],
+    ()=>[{l:'Substack',v:D.o_ss},{l:'Writers',v:D.o_ss_writers}],
+    ()=>[{l:'Instagram',v:D.o_ig_total}],
+    ()=>[{l:'X total',v:D.o_x_total},{l:'Tip-offs',v:D.o_cc_tips}]
+  ]},
+ brands:{steps:['Crosscurrents','The Fiscalist','FutureWire'],
+  notes:['Crosscurrents: tip-offs + X + Substack + Instagram.','The Fiscalist: finance and markets on X.','FutureWire: optimistic tech and future stories on X.'],
+  stats:[
+    ()=>[{l:'X',v:D.o_cc_x},{l:'Tips',v:D.o_cc_tips},{l:'Substack',v:D.o_ss},{l:'IG',v:D.o_ig_total}],
+    ()=>[{l:'X replies',v:D.o_fi_x},{l:'Share',v:D.o_fi_share+'%'}],
+    ()=>[{l:'X replies',v:D.o_fw_x},{l:'Share',v:D.o_fw_share+'%'}]
+  ]}
+};
+let ojKind='path', ojIdx=0, ojTimer=null;
+function renderOJourney(){
+ const J=OPATHS[ojKind]; const track=document.getElementById('ojtrack'); const note=document.getElementById('ojnote'); const st=document.getElementById('ojstats');
+ if(!track) return;
+ track.innerHTML=J.steps.map((s,i)=>`<span class="jstep${i===ojIdx?' on':''}${i<ojIdx?' done':''}" data-oi="${i}">${s}</span>${i<J.steps.length-1?'<span class="tarr">›</span>':''}`).join('');
+ if(note) note.textContent=J.notes[ojIdx]||'';
+ if(st){ const rows=(J.stats[ojIdx]||(()=>[]))(); st.innerHTML=rows.map(r=>`<div class="stat" style="background:#EEF2FB;border-radius:12px;padding:8px 12px;font-weight:700;font-size:13px"><b style="display:block;font-size:18px;color:var(--amber)">${r.v}</b>${r.l}</div>`).join(''); }
+ track.querySelectorAll('.jstep').forEach(el=>el.onclick=()=>{ojIdx=+el.dataset.oi; renderOJourney();});
+}
+function playOJourney(){
+ clearInterval(ojTimer); ojIdx=0; renderOJourney();
+ ojTimer=setInterval(()=>{ojIdx++; if(ojIdx>=OPATHS[ojKind].steps.length) ojIdx=0; renderOJourney()},1800);
+}
+document.querySelectorAll('#ojourney .jtoggle .tpill').forEach(p=>p.onclick=()=>{
+ document.querySelectorAll('#ojourney .jtoggle .tpill').forEach(q=>q.classList.toggle('on',q===p));
+ ojKind=p.dataset.oj; playOJourney();
+});
+playOJourney();
+document.querySelectorAll('[data-brand]').forEach(card=>{
+ card.style.cursor='pointer';
+ card.onclick=()=>{ const f=card.dataset.brand; setTeamFilter(f); const pill=[...document.querySelectorAll('#tfilters .tpill')].find(p=>p.dataset.f===f); if(pill) pill.scrollIntoView({behavior:'smooth',block:'nearest'}); };
+});
+
+const LEADS={
+ butler:{title:'🎩 Butler',role:'Main contact',about:'Your day-to-day contact. Bundles questions into one ask, and carries your yes or no back to the whole team.',flow:'You → Butler → any lead or specialist',projects:['all','g','cc','fi','fw'],
+  stats:()=>[{l:'Role',v:'Main contact'},{l:'Talks to',v:'You + every lead'}]},
+ gm:{title:'📚 Grokmeister',role:'Runs the encyclopedia lane',about:'Owns encyclopedia edits, page requests, and tracking results for Account A and Account B.',flow:'You / Butler → Grokmeister → Find → Match → Edit → Submit → Track',projects:['all','g'],
+  stats:()=>[{l:'Edits approved',v:fmt(D.g_approved)+' of '+fmt(D.g_sent)},{l:'Approval rate',v:D.g_rate+'%'},{l:'New pages',v:fmt(D.g_created)+' of '+fmt(D.g_requests)}]},
+ fixer:{title:'🔧 Fixer',role:'Fixes problems',about:'Steps in when something is stuck: access, broken flows, or urgent pauses so the rest of the team can keep moving.',flow:'Any lead → Fixer → unblocked specialist or paused outreach',projects:['all','g','cc','fi','fw'],
+  stats:()=>[{l:'Role',v:'Fixes problems'},{l:'Example',v:"Paused The Fiscalist when usage hit 99%"}]}
+};
+const FLOWS={
+ all:['You','Butler','Grokmeister','Fixer','Specialists'],
+ g:['You','Butler','Grokmeister','Find','Match','Edit','Submit','Track'],
+ cc:['You','Butler','Outreach','Crosscurrents','Tip-offs','X / Substack'],
+ fi:['You','Butler','Outreach','The Fiscalist','X replies'],
+ fw:['You','Butler','Outreach','FutureWire','X replies']
+};
+function showLead(id){
+ const box=document.getElementById('tdetail'); if(!box) return;
+ document.querySelectorAll('#leads .lead').forEach(l=>l.classList.toggle('on',l.dataset.lead===id));
+ const L=LEADS[id]; if(!L){box.classList.remove('on');box.innerHTML='';return}
+ const stats=L.stats().map(s=>`<div class="stat"><b>${s.v}</b>${s.l}</div>`).join('');
+ box.innerHTML=`<h4>${L.title}</h4><p><b>${L.role}.</b> ${L.about}</p><p>Flow: ${L.flow}</p><div class="statrow">${stats}</div>`;
+ box.classList.add('on');
+}
+document.querySelectorAll('#leads .lead').forEach(el=>{
+ const act=()=>showLead(el.dataset.lead);
+ el.onclick=act; el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act()}};
+});
+function setTeamFilter(f){
+ document.querySelectorAll('#tfilters .tpill').forEach(p=>p.classList.toggle('on',p.dataset.f===f));
+ const nodes=FLOWS[f]||FLOWS.all;
+ const flow=document.getElementById('tflow');
+ if(flow) flow.innerHTML=nodes.map((n,i)=>`<span class="tnode lit">${n}</span>${i<nodes.length-1?'<span class="tarr">›</span>':''}`).join('');
+ document.querySelectorAll('#leads .lead').forEach(l=>{
+  const ok=(LEADS[l.dataset.lead].projects||[]).includes(f)||f==='all';
+  l.style.opacity=ok?'':'.35';
+ });
+ const gSteps=new Set(['Find','Match','Edit','Submit','Research','Record','Track']);
+ document.querySelectorAll('#chain .chip').forEach(c=>{
+  const step=c.dataset.step; const show=f==='all'||(f==='g'&&gSteps.has(step))||(f!=='g'&&['Research','Record','Track'].includes(step));
+  c.classList.toggle('lit', f==='g' && gSteps.has(step));
+  c.style.opacity=show?'':'.35';
+ });
+}
+document.querySelectorAll('#tfilters .tpill').forEach(p=>p.onclick=()=>setTeamFilter(p.dataset.f));
+document.querySelectorAll('.tfact').forEach(f=>{
+ const tog=()=>f.classList.toggle('open');
+ f.onclick=tog; f.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}};
+});
+setTeamFilter('all');
+
 
 // start
 show(q.get('tab')||sessionStorage.getItem('dashTab')||'g');
